@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px" height="36px"
+	 viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  width="20.596" height="31.035" x="7.979" y="-34.213" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<path fill="none" stroke="#0377B7" stroke-linecap="round" d="M13.309,7.371V6.088c0-1.334,0.951-2.41,2.127-2.41h5.678
+	c1.182,0,2.135,1.076,2.135,2.41v1.283"/>
+<g>
+	<path fill="none" stroke="#0377B7" stroke-linecap="round" d="M8.479,13.639v17.666c0,1.332,0.953,2.408,2.133,2.408h15.328
+		c1.18,0,2.135-1.076,2.135-2.408V13.639H8.479z"/>
+	<path fill="none" stroke="#0377B7" stroke-linecap="round" d="M28.074,10.266c0-1.332-0.955-2.412-2.135-2.412H10.611
+		c-1.18,0-2.133,1.08-2.133,2.412v3.373h19.596V10.266z"/>
+</g>
+<line fill="none" stroke="#0377B7" stroke-linecap="round" x1="13.514" y1="17.73" x2="13.514" y2="29.637"/>
+<line fill="none" stroke="#0377B7" stroke-linecap="round" x1="18.447" y1="17.73" x2="18.447" y2="29.637"/>
+<line fill="none" stroke="#0377B7" stroke-linecap="round" x1="23.387" y1="17.73" x2="23.387" y2="29.637"/>
+</svg>

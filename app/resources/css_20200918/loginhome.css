@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+/* 2차인증비밀번호입력 */
+.secondary_pw {
+  width: 100%;
+  min-height: 100vh;
+  background: url("../images/common/secondary_pw_bg.jpg") no-repeat 50% / cover;
+}
+
+
+.secondary_pw .group {
+  /* 20200904 */
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 96%;
+  text-align: center;
+  color: #fff;
+}
+
+.secondary_pw .group h1 em {
+  /* 20200904 */
+  display: block;
+  width: 5em;
+  height: 5em;
+  margin: 0 auto 1.25em;
+  background: url("../images/main/mi.png") no-repeat 50% / contain;
+}
+
+.secondary_pw .group .title {
+  /* 20200904 */
+  display: block;
+  font-size: 1.625em;
+  letter-spacing: -0.075em;
+}
+
+/* 20200828-01 확인 필요 */
+.secondary_pw .group #secondaryPwForm {
+  width: 90%;
+  max-width: 17em;
+  margin: 1em auto 0;
+}
+
+.secondary_pw .group p {
+  /* 20200904 */
+  word-break: keep-all;
+}
+
+.secondary_pw .group #secondaryPwForm table {
+  width: 100%;
+}
+
+.secondary_pw .group #secondaryPwForm .input_text_common {
+  float: left;
+  display: block;
+  width: calc(100% - 3em);
+  padding: 0 0 0 2.5em;
+  border: 0;
+  border-radius: 1.5em 0 0 1.5em;
+  color: #073765;
+  text-align: center;
+}
+/* 20200828-01 확인 필요 */
+.secondary_pw .group #secondaryPwForm #btnConfirm {
+  float: left;
+  display: block;
+  width: 3em;
+  margin: 0;
+  border: 0;
+  background: #fff url("../images/common/secondary_pw_btn.png") no-repeat 50%/75%;
+  border-radius: 0 1.5em 1.5em 0;
+}
+.secondary_pw .group #btnConfirm2 {
+  /* 20200904 */
+  display: block;
+  width: 100%;
+  max-width: 12em;
+  padding: .625em 1em;
+  margin: 0 auto;
+  border: 0;
+  font-size: 1.375em;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: -0.05em;
+  color: #fff;
+  background: #013d77;
+  border-radius: 1.75em;
+  position: relative;
+}
+/* 20200828-01 확인 필요 */
+.secondary_pw .group #btnConfirm2:after {
+  content: "";
+  display: block;
+  width: 1.625em;
+  height: 1.625em;
+  background: url("../images/common/secondary_pw_btn.png") 50%/100%;
+  position: absolute;
+  top: 50%;
+  right: 0.325em;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.secondary_pw .group .welcome_appLink {
+  width: 90%;
+  max-width: 19em;
+  margin: 0 auto;
+}
+
+.secondary_pw .group .welcome_appLink::after {
+  /* 20200904-2 */
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.secondary_pw .group .welcome_appLink li {
+  /* 20200904-2 */
+  float: left;
+  width: 49.5%;
+  margin: 1.5em 0 0;
+  overflow: hidden;
+}
+
+.secondary_pw .group .welcome_appLink.type1 {
+  max-width: 11.5em;
+}
+
+.secondary_pw .group .welcome_appLink.type1 li {
+  /* 20200904-2 */
+  width: 100%;
+  border-radius: .25em;
+}
+
+.secondary_pw .group .welcome_appLink.type1 li a {
+  /* 20200904-2 */
+  padding: 1.125em .25em 1.125em 3.875em;
+}
+
+.secondary_pw .group .welcome_appLink.type1 li .br {
+  display: inline;
+}
+
+.secondary_pw .group .welcome_appLink.type1 li a.btn_appVideo {
+  padding: 1.125em .25em 1.125em 3.25em;
+  background-size: 1.25em;
+}
+
+.secondary_pw .group .welcome_appLink.type2 li {
+  /* 20200904-2 */
+  float: left;
+  width: 49.5%;
+  margin: 1.5em 0 0;
+  border-radius: .25em 0 0 .25em;
+}
+
+.secondary_pw .group .welcome_appLink.type2 li .br {
+  display: block;
+}
+
+.secondary_pw .group .welcome_appLink li:nth-child(2) {
+  /* 20200904-2 */
+  margin-left: 1%;
+  border-radius: 0 .25em .25em 0;
+}
+
+.secondary_pw .group .welcome_appLink li a {
+  /* 20200904-2 */
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: .875em .25em .875em 3.875em;
+  color: #fff;
+  text-align: left;
+}
+
+.secondary_pw .group .welcome_appLink li a.btn_appDown {
+  /* 20200904-2 */
+  background: rgba(0,59,119,0.5) url("../images/common/btn_app_down.png") no-repeat 1.375em 50% / 1.75em;
+}
+
+.secondary_pw .group .welcome_appLink li a.btn_appVideo {
+  /* 20200904-2 */
+  background: rgba(0,59,119,0.5) url("../images/common/btn_app_video.png") no-repeat 1.375em 50% / 1.75em;
+}
+
+
+
+
+.secondary_pw .group .guide_pw_bottom {
+  width: 90%;
+  margin: 1.5em auto 0;
+  font-size: 0.875em;
+  word-break: keep-all;
+}
+
+.secondary_pw .group .reset_account {
+  /* 20200904 */
+  padding: .375em 1.5em;
+  margin-top: 1.5em;
+  border: .125em solid #fff;
+  border-radius: 1.75em;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.secondary_pw cite {
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 0;
+  opacity: 0.8;
+}

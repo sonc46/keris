@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html" class="active">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="path_bar">
+				<h2 class="skip">공지관리</h2>
+				<p class="path"><span>공지관리</span></p>
+				<div class="user type3">
+					<dl>
+						<dt>교육청</dt>
+						<dd><span>서울특별시강서양천교육지원청</span> ( 담당 서원형 )</dd>
+						<dd><span>접속시각</span> 2020.07.30. 09:25:45</dd>
+					</dl>
+					<button class="logoutBtn" onclick="alert('로그아웃되었습니다.'); location.href='../admin/login.html';">로그아웃</button>
+				</div>
+			</div>
+			<div class="subpage">
+				<div class="search_detail">
+					<ul>
+						<li class="group group1 clear">
+							<label for="option1">기관분류</label>
+							<select name="year" id="option1" class="long" title="기관분류">
+								<option value="">시도교육청</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="AlarmTransferDate">작성일</label>
+							<input type="date" id="AlarmTransferDate" title="작성 시작일" value=""> ~
+							<input type="date" id="AlarmTransferDate2" title="작성 마지막일" value="">
+						</li>
+						<li class="group group2">
+							<label for="detailSearch" class="skip">조회</label>
+							<input type="submit" id="detailSearch" class="btn" value="조회">
+						</li>
+					</ul>
+				</div>
+				<div class="contents">
+					<div class="tbl_bo_search">
+						<div class="group1">
+							<label for="boSearch">검색</label>
+							<div class="layer1">
+								<input type="text" id="boSearch">
+								<button type="submit" class="btn">검색</button>
+							</div>
+						</div>
+						<ul class="linkBtn">
+							<li><button type="button" class="btn notice" onclick="location.href='공지등록.html'">공지등록</button></li>
+						</ul>
+					</div>
+					<div class="tbl_bo_list type3 tbl_scroll">
+						<table>
+							<thead>
+								<tr>
+									<th class="col_10">관리번호</th>
+									<th class="col_60">제목</th>
+									<th class="col_15">등록기관명</th>
+									<th class="col_10">작성자</th>
+									<th class="col_10">등록일자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="number">20 - 1028</td>
+									<td class="title"><a href="#">가곡고등학교</a></td>
+									<td>강원도원주교육지청</td>
+									<td>최혜민</td>
+									<td class="number">2020.08.07</td>
+								</tr>
+								<tr>
+									<td class="number">20 - 1028</td>
+									<td class="title"><a href="#">가곡고등학교</a></td>
+									<td>강원도원주교육지청</td>
+									<td>최혜민</td>
+									<td class="number">2020.08.07</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_bo_page_nation">
+						<div class="group1">
+							<a class="btn start" href="javascript:;"><span class="skip">처음</span></a>
+							<a class="btn prev" href="javascript:;"><span class="skip">이전</span></a>
+							<a class="page current" href="#">1</a>
+							<a class="page" href="#">2</a>
+							<a class="page" href="#">3</a>
+							<a class="page" href="#">4</a>
+							<a class="page" href="#">5</a>
+							<a class="page" href="#">6</a>
+							<a class="page" href="#">7</a>
+							<a class="page" href="#">8</a>
+							<a class="page" href="#">9</a>
+							<a class="page" href="#">10</a>
+							<a class="btn next" href="javascript:;"><span class="skip">다음</span></a>
+							<a class="btn end" href="javascript:;"><span class="skip">끝</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

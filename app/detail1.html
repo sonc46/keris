@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>학생 건강상태 자가진단</title>
+	<link rel="stylesheet" href="resources/css_20200918/common.css">
+	<link rel="stylesheet" href="resources/css_20200918/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+	<script src="resources/js/classList.min.js"></script>
+	<script src="resources/js/common.js"></script>
+</head>
+<body>
+	<div id="softBoardListLayer">
+    <div class="layerTitle">
+      <strong>상세현황</strong>
+      <button type="button" class="layerBackBtn" @click="$emit('close')" aria-label="뒤로가기버튼">
+        <span class="skip">뒤로가기</span>
+      </button>
+    </div>
+    <div
+      class="layerAttendWrap"
+      :class="{type2: selectedJoin.surveyYn === 'Y' && selectedJoin.rspns00 === 'Y', type3: selectedJoin.surveyYn === 'Y' && selectedJoin.rspns00 === 'N'} "
+    >
+      <div class="layerAttendTop">
+        <p v-if="selectedJoin.surveyYn === 'N'">미참여</p>
+        <!-- <p v-if="selectedJoin.surveyYn === 'Y'">
+          {{selectedJoin.rspns00 === 'Y' ? "정상" : "유증상"}}
+          <strong
+            v-if="joinDetail.rspns01 === '1'"
+          >37.5℃ 미만</strong>
+          <strong v-if="joinDetail.rspns01 === '2'">37.5℃ 이상 및 발열감</strong>
+        </p> -->
+
+        <!-- <span v-if="selectedJoin.surveyYn === 'Y'">{{joinDetail.registerDtm.substr(0, 16)}}</span> -->
+      </div>
+      <div class="layerAttend">
+        <ul class="layerAttendInfo">
+		  <li>김슬기</li>
+		  <!-- <li>{{selectedJoin.name}}</li> -->
+          <!-- 담임권한 -->
+          <li v-if="gubun === 'teacher'">
+            <!-- <span>{{selectedClass.kraOrgNm}}</span>
+            <span
+              v-if="selectedClass.grade !== '0'"
+              style="margin-left:0.5em"
+            >{{selectedClass.grade}}학년</span>
+            <span v-else style="margin-left:0.5em"></span>
+            <span style="margin-left:0.5em">{{selectedClass.classNm}}반</span>
+          </li> -->
+          <!-- 부서장 권한 -->
+          <li v-else>
+            <span>{{selectedClass.kraOrgNm}}</span>
+            <span style="margin-left:0.5em">{{selectedClass.kraDeptNm}}</span>
+            <span style="margin-left:0.5em"></span>
+          </li>
+		  <li class="user_tel">
+		    <!-- 20200921 -->
+			<!-- <a class="tel_number" href="tel:010-1234-5678">010-1234-5678</a> -->
+			<span class="tel_none">등록된 전화번호 없음</span>
+		  </li>
+        </ul>
+        <ul class="layerAttendArea">
+		  <li>
+		    <p>
+              체온
+              <span v-if="selectedJoin.surveyYn === 'N'">미참여</span>
+              <!-- <span v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns02 !== '0'" class="no">37.5&#8451; 미만</span> -->
+              <!-- <span
+                v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns02 !== '1'"
+                class="yes"
+              >37.5&#8451; 이상 및 발열감</span> -->
+            </p>
+		  </li>
+          <li>
+            <p>
+              코로나19 의심 증상
+              <span v-if="selectedJoin.surveyYn === 'N'">미참여</span>
+              <span v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns02 !== '0'" class="no">없음</span>
+              <span
+                v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns02 !== '1'"
+                class="yes"
+              >있음</span>
+            </p>
+            <ul>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns03 === '1'">기침</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns05 === '1'">호흡곤란</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns13 === '1'">오한</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns14 === '1'">근육통</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns15 === '1'">두통</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns04 === '1'">인후통</li>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns11 === '1'">후각미소실</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              위험지역여행
+              <span v-if="selectedJoin.surveyYn === 'N'">미참여</span>
+              <span v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns07 === '0'" class="no">없음</span>
+              <span
+                v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns07 === '1'"
+                class="yes"
+              >있음</span>
+            </p>
+            <ul>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns07 === '1'">예</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              동거가족 위험지역여행
+              <span v-if="selectedJoin.surveyYn === 'N'">미참여</span>
+              <span v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns08 === '0'" class="no">없음</span>
+              <span
+                v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns08 === '1'"
+                class="yes"
+              >있음</span>
+            </p>
+            <ul>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns08 === '1'">예</li>
+            </ul>
+          </li>
+          <li>
+            <p>
+              동거가족 자가격리
+              <span v-if="selectedJoin.surveyYn === 'N'">미참여</span>
+              <span v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns09 === '0'" class="no">없음</span>
+              <span
+                v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns09 === '1'"
+                class="yes"
+              >있음</span>
+            </p>
+            <ul>
+              <li v-if="selectedJoin.surveyYn === 'Y' && joinDetail.rspns09 === '1'">예</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="layerBtnWrap">
+        <button type="button" class="layerFullBtn" @click="$emit('close')" style="width:100%">목록으로</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>학생 건강상태 자가진단</title>
+	<link rel="stylesheet" href="resources/css/common_20200904.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/placeholders.min.js"></script>
+	<script src="resources/js/classList.min.js"></script>
+    <style>
+        .layer-shadow {position:fixed; top:0; left:0; z-index:950; width:100%; height:100%; background:rgba(0,0,0,.4);}
+        #eventLayer {position: absolute; top:5%; left:50%; transform:translateX(-50%); z-index:951; width:94%; max-width:1000px; background:url("resources/images/common/popup_bg.jpg") no-repeat 50%/cover;}
+        #eventLayer .group1 {padding: 2.5em 1em 2em 1em; text-align: center;}
+        #eventLayer .group1 strong {font-size:1.25em; color:#004580; letter-spacing:-0.075em; word-break: keep-all;}
+        #eventLayer .group1 strong .br {display: block;}
+        #eventLayer .group1 strong em {color:#0d7ad6;}
+        #eventLayer .group1 ul {width: 75%; max-width:640px; margin:0 auto;}
+        #eventLayer .group1 ul::after {content: ''; display:block; clear:both;}
+        #eventLayer .group1 ul li {float:left; width: 47%; margin: 1.5em 0 0;}
+        #eventLayer .group1 ul li:first-child {margin-right:6%;}
+        #eventLayer .group1 ul li a {display: block;}
+        #eventLayer .group1 ul li a strong {display:block; width: 5em; margin:0 auto .5em; text-align: center;}
+        #eventLayer .group1 ul li a strong img {max-width:100%}
+        #eventLayer .group1 ul li a p {width:9em; max-width:100%; padding:.375em .25em .625em; margin:0 auto; background:#000; color:#fff; border-radius: .5em;}
+        #eventLayer .group1 ul li a p i {display: block; height: 1.75em; margin:0 auto .125em;}
+        #eventLayer .group1 ul li a p i img {height: 100%;}
+        #eventLayer .group1 ul li a p em {display: block; width:100%; height: 1.75em; line-height: 1.75; margin:0 auto .125em; }
+
+        #eventLayer .group1 ul li a p span {display:block; font-size:1.063em; font-weight:700; color:#fffc00; line-height: 1;}
+        #eventLayer .group2 {
+            padding: 1.5em .5em; 
+            width:100%;
+            color: #fff;
+            background:rgba(0,104,209,0.5); 
+            text-align: center;
+        }
+        #eventLayer .group2 span {
+            font-size: .875em;
+            word-break: keep-all;
+        }
+        #eventLayer .group2 .goBtn {
+            display: block;
+            color:#fff;
+            height: 2.5em;
+            padding: 0 3em 0 1em;
+            margin: .75em auto 0;
+            border:0.125em solid #fff;
+            background: url("resources/images/common/popup_go.png") no-repeat 90% 50% / 1em;
+            border-radius: 1.25em;
+            font-size: .875em;
+            font-weight: 700;
+        }
+        #eventLayer .group2 .closeBtn {
+            position:absolute;
+            top:0;
+            right:0;
+            width: 2.5em;
+            height: 2.5em;
+        }
+        #eventLayer .group2 .closeBtn::before {
+            content: '';
+            display: block;
+            width: 1.5em;
+            height: .0875em;
+            background: #000;
+            transform: rotate(45deg);
+            position: absolute;
+            top:0;
+            left:0;
+            margin: 1.25em 0 0 .5em;
+        }
+        #eventLayer .group2 .closeBtn::after {
+            content: '';
+            display: block;
+            width: 1.5em;
+            height: .0875em;
+            background: #000;
+            transform: rotate(-45deg);
+            position: absolute;
+            top:0;
+            left:0;
+            margin: 1.25em 0 0 .5em;
+        }
+
+        @media screen and (max-width:1280px){
+            #eventLayer .group1 ul {width: 60%;}
+            #eventLayer .group1 strong {font-size:1.125em;}
+        }
+        @media screen and (max-width:1000px){
+            #eventLayer {top:2%;}
+            #eventLayer .group1 strong {font-size:1em}
+        }
+        @media screen and (max-width:800px){
+            #eventLayer .group1 strong {font-size:.875em}
+            #eventLayer .group1 ul li a strong {width: 6em; height: 6em;}
+        }
+        @media screen and (max-width:640px){
+            #eventLayer .group1 ul {width: 80%;}
+        }
+        @media screen and (max-width:640px){
+            #eventLayer .group1 ul {width: 100%;}
+        }
+        @media screen and (max-width:320px){
+            #eventLayer .group1 strong .br {display: inline-block;}
+        }
+    </style>
+</head>
+<body>
+    <div id="eventLayer">
+        <section class="group1">
+            <strong>건강상태 자가진단 신규 서비스를 제공 중이오니,<span class="br"> </span><em>&quot;건강상태 자가진단(교육부)&quot; 앱을 설치</em>하여 이용하여 주십시오.</strong>
+            <ul>
+                <!-- <li>
+                    <a href="#">
+                        <strong><img src="resources/images/common/qrcode02.jpg" alt="QRcode"></strong>
+                        <p><i><img src="resources/images/common/qrcode02_a.png" alt="App Store"></i><span>다운로드하기</span></p>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="#">
+                        <strong><img src="resources/images/common/qrcode02.png" alt="QRcode"></strong>
+                        <p><i><img src="resources/images/common/qrcode02_a.png" alt="App Store"></i><span>다운로드하기</span></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <strong><img src="resources/images/common/qrcode01.jpg" alt="QRcode"></strong>
+                        <p><i><img src="resources/images/common/qrcode01_a.png" alt="Google Play"></i><span>다운로드하기</span></p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="group2">
+            <span>앱 이용이 어려울 경우, <a href="http://hcs.eduro.go.kr">http://hcs.eduro.go.kr</a>에 접속하여 참여 가능합니다.</span>
+            <button type="button" class="goBtn">신규 서비스 바로가기</button>
+            <button type="button" class="closeBtn"><span class="skip">닫기</span></button>
+        </section>
+    </div>
+    <div class="layer-shadow"></div>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8090/ -->
+<html lang="ko" class=" -webkit-"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=9">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</style>
+</head>
+<body>
+	<div class="login_wrap">
+		<div class="login">
+			<h1>건강상태 자가진단</h1>
+			<form method="post" action="http://localhost:8090/loginProcess" class="loginForm" onsubmit="return checkLogin(this);">
+       	 	<input type="hidden" name="_csrf" value="d30136b3-30fe-4afa-add9-47b859687837">
+				<ul class="loginInfo">
+					<li>
+                        <label for="login_id">아이디</label>
+						<input type="text" name="username" id="username" title="아이디" maxlength="30" placeholder="업무포털ID" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;업무포털ID&#39;">
+					</li>
+					<li>
+						<label for="login_pw">비밀번호</label>
+						<input type="password" name="password" id="password" title="비밀번호" maxlength="20" placeholder="업무포털ID+생년월일 6자리" onfocus="this.placeholder=&#39;&#39;" onblur="this.placeholder=&#39;업무포털ID+생년월일 6자리&#39;">
+					</li>
+				</ul>
+				<div  style="font-size:13px; padding-top:5px;">※ 재 로그인 시 본인이 설정한 비밀번호 이용</div>
+			<button type="submit" class="loginBtn">로그인</button>
+			</form>
+			<ul class="login_menu">
+				<a href="javascript:void(0)" id="registerEvent">관리자 신청</a> 
+				<div class="tooltip">
+					<span><img src="images/common/btn_request.gif" style="vertical-align: text-bottom;"></span>
+					<div class="tooltip-content">
+                        <div class="tooltip-contentTop">관리자 신청이란?</div>
+                        <div class="tooltip-contentTxt">
+                            <p> 교직원이 '기관(학교)관리', '부서/담임관리', '학년반관리' 등의 기능을 사용하기</p>
+                            <p> 위해 권한을 신청할 경우 사용합니다.</p>
+                            <p>&nbsp;</p>
+                            <p>교직원이 권한을 신청하는 경우</p>
+                            <p>&nbsp;</p>
+                            <p> 사용 중인 업무포털ID*를 통해 관리자 신청이 가능하며, </p>
+                            <p>&nbsp;</p>
+                            <p> 기관(학교) 관리자의 승인에 의해 권한을 부여 받을 수 있습니다.</p>
+                            <p>&nbsp;</p>
+                            <p> *업무포털ID가 없는 경우 관리자 신청 페이지에서 중복확인을 통해 신규ID를</p>
+                            <p> 생성하여 권한신청 하시기 바랍니다.</p>
+                            <p>&nbsp;</p>
+                            <p> 다만, 유·초·중·고 학교의 초기 관리자 ID는 기존 나이스 학생 건강상태 자가진단 시스템 및 업무포털 정보를</p>
+                            <p> 이용하여 초기설정 되어 있으므로 매뉴얼내 해당 내용 확인 후 로그인하여 주시기 바랍니다.</p>
+                        </div>
+                    </div>
+				</div>
+			</ul>
+			<p class="login_logo"><span class="skip">교육부</span></p>
+		</div>
+		
+		<div id="registerLayer" class="popupLayer form_layer">
+			<div class="layer_title">
+				<strong>관리자 신청</strong>
+			</div>
+			<div class="layer_contents">
+				<form name="askForm" action="http://localhost:8090/mng/ask.do" id="askForm" class="listModifyForm" method="post" onsubmit="return askManage(this);"><input type="hidden" name="_csrf" value="d30136b3-30fe-4afa-add9-47b859687837">
+					<ul>
+						<li>
+							<label for="sido">구분</label>
+							<select name="sido" id="sido" onchange="chgSido();">
+								<option value="A">교육부</option>
+								<option value="B">서울특별시</option>
+								<option value="C">부산광역시</option>
+								<option value="D">대구광역시</option>
+								<option value="E">인천광역시</option>
+								<option value="F">광주광역시</option>
+								<option value="G">대전광역시</option>
+								<option value="H">울산광역시</option>
+								<option value="I">세종특별자치시</option>
+								<option value="J">경기도</option>
+								<option value="K">강원도</option>
+								<option value="M">충청북도</option>
+								<option value="N">충청남도</option>
+								<option value="P">전라북도</option>
+								<option value="Q">전라남도</option>
+								<option value="R">경상북도</option>
+								<option value="S">경상남도</option>
+								<option value="T">제주특별자치도</option>
+							</select>
+						</li>
+						<li>
+							<label for="kraOrgNm">기관(학교)명</label>
+							<div class="searchResultsWrap">
+								<input type="text" id="kraOrgNm" name="kraOrgNm" required="" class="middle" onkeypress="javascript:if(event.keyCode==13){searchSchool();return false;}">
+								<input type="hidden" id="schulCode" name="schulCode">
+								<input type="hidden" id="orgKbn" name="orgKbn">
+								<input type="hidden" id="schulKndScCode" name="schulKndScCode">
+							</div>
+							<button type="button" class="searchResultsBtn" onclick="searchSchool();">검색</button>
+						</li>
+						<li>
+							<label for="orgRight">신청권한</label>
+							<select name="orgRight" id="orgRight">
+								<option value="1">기관(학교)관리자</option>
+								<option value="2">부서(담임)관리자</option>
+							</select>
+						</li>
+						<li>
+							<label for="userName">이름</label>
+							<input type="text" id="userName" name="userName" required="" maxlength="20">
+						</li>
+						<li>
+							<label for="userName">생년월일</label>
+							<input type="text" id="frnoRidno" name="frnoRidno" required="" pattern="[0-9]{6}" maxlength="6" title="&#39;YYMMDD&#39;와 같은 6자리 숫자" placeholder="6자리 (YYMMDD)">
+						</li>
+						<li>
+							<label for="userId">아이디</label>
+							<input type="text" id="userId" name="userId" required="" maxlength="30" onkeypress="javascript:if(event.keyCode==13){return false;}" placeholder="업무포털 아이디">
+							<button type="button" class="idResultsBtn" onclick="checkId();">중복확인</button>
+						</li>
+						<li>
+							<label for="userPw">비밀번호</label>
+							<input type="password" id="userPw" name="userPw" required="" maxlength="20" title="8자리 ~ 20자리 이내로 영문, 숫자, 특수문자를 혼합하여 입력" placeholder="8자리 이상">
+						</li>
+						<li>
+							<label for="userPw2">비밀번호 확인</label>
+							<input type="password" id="userPw2" name="userPw2" required="" maxlength="20">
+						</li>
+						<li>
+							<label for="cellPhone">휴대전화번호</label>
+							<input type="tel" id="cellPhone" name="cellPhone" required="" maxlength="13" pattern="0\d{2}-\d{3,4}-\d{4}" title="형식 000-0000-0000" autocomplete="off" placeholder="&#39;-&#39;없이 입력" onkeyup="inputPhoneNumber(this);">
+						</li>
+					</ul>
+					<div class="formBtnWrap">
+						<input type="reset" class="btn cancle" value="취소" title="작성 취소">
+						<input type="submit" class="btn save" value="신청" title="작성 저장">
+					</div>
+				</form>
+			</div>
+			<a class="popupLayerClose" href="javascript:;">close</a>
+		</div>
+		<div id="popupLayerShadow"></div>
+		<div id="modifyLayer" class="popupLayer form_layer">
+		</div>
+		
+		<footer id="footer">
+			<cite>Copyright (c) Ministry of Education. All Rights Reserved.</cite>
+		</footer>
+	</div>
+	
+		<script>
+			/*<![CDATA[*/
+				
+			function chgSido(){
+				$("#kraOrgNm").val("");
+			}
+			
+			var idDupChk = false;
+			var checkOrinId = "";
+			
+			function askManage(form) {
+
+				if(form.kraOrgNm.value == null || form.kraOrgNm.value == "") {
+					alert("기관(학교)명을 입력해 주세요");
+					form.kraOrgNm.focus();
+					return false;
+				}
+				if(form.schulCode.value == null || form.schulCode.value == "") {
+					alert("기관(학교)명 검색을 해주세요");
+					form.kraOrgNm.focus();
+					return false;
+				}
+				if(form.userId.value == null || form.userId.value == "") {
+					alert("아이디를 입력해 주세요");
+					form.userId.focus();
+					return false;
+				}
+				if(!idDupChk) {
+					alert("아이디 중복확인을 해주세요");
+					form.userId.focus();
+					return false;
+				}
+				if(!(checkOrinId == form.userId.value)){
+					alert("아이디가 변경 되었습니다. 아이디 중복확인을 해주세요");
+					form.userId.focus();
+					return false;
+				}
+				if(form.userPw.value == null || form.userPw.value == "") {
+					alert("비밀번호를 입력해 주세요");
+					form.userPw.focus();
+					return false;
+				}
+
+				var pw = form.userPw.value;
+				var num = pw.search(/[0-9]/g);
+				var eng = pw.search(/[a-z]/ig);
+				var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+				if(pw.length < 8 || pw.length > 20){
+					alert("비밀번호는 8자리 ~ 20자리 이내로 입력해주세요.");
+					form.userPw.focus();
+					return false;
+				}
+				if(pw.search(/₩s/) != -1){
+					alert("비밀번호는 공백업이 입력해주세요.");
+					form.userPw.focus();
+					return false;
+				} 
+				if(num < 0 || eng < 0 || spe < 0 ){
+					alert("영문, 숫자, 특수문자를 혼합하여 입력해주세요.");
+					form.userPw.focus();
+					return false;
+				}
+				if(form.userPw2.value == null || form.userPw2.value == "") {
+					alert("비밀번호 확인을 입력해 주세요.");
+					form.userPw2.focus();
+					return false;
+				}
+				if(form.userPw.value != form.userPw2.value) {
+					alert("비밀번호와 비밀번호 확인 값이 다릅니다.");
+					form.userPw.focus();
+					return false;
+				}
+				if(form.userName.value == null || form.userName.value == "") {
+					alert("이름을 입력해 주세요");
+					form.userName.focus();
+					return false;
+				}
+				if(form.frnoRidno.value == null || form.frnoRidno.value == "") {
+					alert("생년월일울 입력해 주세요");
+					form.frnoRidno.focus();
+					return false;
+				}
+				if(form.frnoRidno.value.length != 6){
+					alert("생년월일을 6자리로 입력해 주세요");
+					form.frnoRidno.focus();
+					return false;
+				} else {
+	
+					var birthday = form.frnoRidno.value;
+					var month = Number(birthday.substr(2,2));
+					var day = Number(birthday.substr(4,2));
+					
+					if (month < 1 || month > 12) {
+						alert("생년월일울 확인해 주세요");
+						form.frnoRidno.focus();
+						return false;	
+					} else if (day < 1 || day > 31) {
+						alert("생년월일울 확인해 주세요");
+						form.frnoRidno.focus();
+						return false;	
+					}
+				}
+
+				if(form.cellPhone.value == null || form.cellPhone.value == "") {
+					alert("휴대전화번호를 입력해 주세요");
+					form.cellPhone.focus();
+					return false;
+				}
+				
+			}
+				
+			function searchSchool() {
+
+				if($("#kraOrgNm").val() == null || $("#kraOrgNm").val() == "") {
+					alert("기관(학교)명을 입력해 주세요");
+					$("#kraOrgNm").focus();
+					return false;
+				}
+				var url = "/mng/schFind.do?kraOrgNm="+encodeURIComponent($("#kraOrgNm").val())+"&sido="+encodeURIComponent($("#sido").val());
+				window.open(url,'findSchool','width=500,height=530');
+			}
+			
+			function setSchulInfo(schulCode, orgKbn, kraOrgNm, schulKndScCode, sido){
+				$("#schulCode").val(schulCode);
+				$("#orgKbn").val(orgKbn);
+				$("#kraOrgNm").val(kraOrgNm);
+				$("#schulKndScCode").val(schulKndScCode);
+				$("#sido").val(sido).attr("selected", "selected");
+			}
+			
+			function checkId() {
+				
+				if($("#userName").val() == null || $("#userName").val() == "") {
+					alert("이름을 입력해 주세요");
+					$("#userName").focus();
+					return false;
+				}
+				if($("#frnoRidno").val() == null || $("#frnoRidno").val() == "") {
+					alert("생년월일울 입력해 주세요");
+					$("#frnoRidno").focus();
+					return false;
+				}
+				var userId = $("#userId").val();
+				if(userId == null || userId == "") {
+					alert("아이디를 입력해 주세요");
+					$("#userId").focus();
+					return false;
+				}
+				var idReg = /^[0-9a-zA-Z]+$/;
+				if( !idReg.test(userId) ) {
+					alert("아이디는 영문 소문자, 대문자 또는 숫자만 입력 가능 합니다.");
+					$("#userId").val("");
+					$("#userId").focus();
+					return false;
+				}
+				
+				var userName = $("#userName").val();
+				var frnoRidno = $("#frnoRidno").val();
+				
+				var schulKndScCode = $("#schulKndScCode").val();
+				var uri = "\/mng\/userIdChk.do";
+				var headers = {"Content-Type": "application/json", "X-HTTP-Method-Override": "POST"};
+				var params = {"userName":userName,"frnoRidno":frnoRidno,"userId":userId,"schulKndScCode":schulKndScCode};
+				
+				var token = $("input[name='_csrf']").val();
+				var theader = "X-CSRF-TOKEN";
+								
+				$.ajax({
+					url: uri,
+					type: "POST",
+					headers: headers,
+					dataType: "json",
+					data: JSON.stringify(params),
+					beforeSend : function(xhr)
+					{
+						xhr.setRequestHeader(theader, token);
+					},
+					success: function(response) {
+						if (response.result == false) {
+							alert(response.message);
+							$("#userId").val("");
+							idDupChk = false;
+							return false;
+						} else {
+							idDupChk = true;
+							checkOrinId = userId;
+							alert(response.message);
+						}
+					},
+					error: function(xhr, status, error) {
+						alert("에러가 발생하였습니다.");
+						idDupChk = false;
+						return false;
+					}
+				});
+			}
+		
+			function checkLogin(form) {
+				
+				var result = (
+						   isValid(form.username, "아이디", null, null)
+						&& isValid(form.password, "비밀번호", null, null)
+				);
+			
+				if ( result == false ) {
+					return false;
+				}
+			}
+			
+			function inputPhoneNumber(obj) {
+				
+				var number  = obj.value.replace(/[^0-9]/g, "");
+				var phone = "";
+				
+				if(number.length < 4) {
+				    return number;
+				} else if(number.length < 7) {
+				    phone += number.substr(0, 3);
+				    phone += "-";
+				    phone += number.substr(3);
+				} else if(number.length < 11) {
+				    phone += number.substr(0, 3);
+				    phone += "-";
+				    phone += number.substr(3, 3);
+				    phone += "-";
+				    phone += number.substr(6);
+				} else {
+				    phone += number.substr(0, 3);
+				    phone += "-";
+				    phone += number.substr(3, 4);
+				    phone += "-";
+				    phone += number.substr(7);
+				}
+				obj.value = phone;
+			  
+			}
+			
+			
+
+			/*]]>*/
+		</script>
+
+</body></html>

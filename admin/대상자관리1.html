@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03 active" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html" class="active">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="path_bar">
+				<h2 class="skip">대상자관리 목록</h2>
+				<p class="path"><span>대상자관리</span><span>대상자관리 목록</span></p>
+				<div class="user type3">
+					<dl>
+						<dt>교육청</dt>
+						<dd><span>서울특별시강서양천교육지원청</span> ( 담당 서원형 )</dd>
+						<dd><span>접속시각</span> 2020.07.30. 09:25:45</dd>
+					</dl>
+					<button class="logoutBtn" onclick="alert('로그아웃되었습니다.'); location.href='../admin/login.html';">로그아웃</button>
+				</div>
+			</div>
+			<div class="subpage">
+				<div class="search_detail">
+					<ul>
+						<li class="group group1 clear">
+							<label for="option1">학년도</label>
+							<select name="year" id="option1" class="input_short" title="학년도">
+								<option value="">2020</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option2">학교급</label>
+							<select name="school" id="option2" title="school">
+								<option value="">고등학교</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option3">과정</label>
+							<select name="process" id="option3" class="input_short" title="process">
+								<option value="">주간</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option4">계열</label>
+							<select name="affiliation" id="option4" title="계열">
+								<option value="일반계">일반계</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option5">학년</label>
+							<select name="school_year" id="option5" class="input_short" title="school_year">
+								<option value="2">2</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option6">반</label>
+							<select name="class" id="option6" class="input_short" title="class">
+								<option value="1">1</option>
+							</select>
+						</li>
+						<li class="group group2">
+							<label for="detailSearch" class="skip">조회</label>
+							<input type="submit" id="detailSearch" class="btn" value="조회">
+						</li>
+					</ul>
+				</div>
+				<div class="contents">
+					<div class="tbl_bo_search">
+						<div class="group1">
+							<label for="boSearch">검색</label>
+							<div class="layer1">
+								<input type="text" id="boSearch">
+								<button type="submit" class="btn">검색</button>
+							</div>
+						</div>
+						<ul class="linkBtn">
+							<li><button type="button" class="btn print">파일출력</button></li>
+							<li><button type="button" class="btn file">일괄양식</button></li>
+							<li><button type="button" class="btn add2">일괄등록</button></li>
+							<li><button type="button" class="btn delete">대상삭제</button></li>
+							<li><button type="button" class="btn add">대상등록</button></li>
+							<li><button type="button" class="btn excel">엑셀 다운로드</button></li>
+						</ul>
+					</div>
+					<div class="tbl_bo_list type1 tbl_scroll">
+						<table>
+							<thead>
+								<tr>
+									<th class="col_4">선택</th>
+									<th class="col_5">순번</th>
+									<th class="col_16">학교급</th>
+									<th class="col_8">구분</th>
+									<th class="col_16">계열</th>
+									<th class="col_5">학년</th>
+									<th class="col_8">반</th>
+									<th class="col_16">학과</th>
+									<th class="col_4">성별</th>
+									<th class="col_10">이름</th>
+									<th class="col_8">인증번호</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>15</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>14</td>
+									<td>초등학교</td>
+									<td>교직원</td>
+									<td>사회과학</td>
+									<td>3</td>
+									<td>아름</td>
+									<td>정치외교학과</td>
+									<td>남</td>
+									<td><a href="javascript:;" class="modifyEvent">홍길동</a></td>
+									<td>ERCRSW</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_bo_page_nation">
+						<div class="group1">
+							<a class="btn start" href="javascript:;"><span class="skip">처음</span></a>
+							<a class="btn prev" href="javascript:;"><span class="skip">이전</span></a>
+							<a class="page current" href="#">1</a>
+							<a class="page" href="#">2</a>
+							<a class="page" href="#">3</a>
+							<a class="page" href="#">4</a>
+							<a class="page" href="#">5</a>
+							<a class="page" href="#">6</a>
+							<a class="page" href="#">7</a>
+							<a class="page" href="#">8</a>
+							<a class="page" href="#">9</a>
+							<a class="page" href="#">10</a>
+							<a class="btn next" href="javascript:;"><span class="skip">다음</span></a>
+							<a class="btn end" href="javascript:;"><span class="skip">끝</span></a>
+						</div>
+					</div>
+				</div>
+				<div id="modifyLayer" class="popupLayer form_layer">
+					<div class="layer_title">
+						<strong>대상자 등록</strong>
+					</div>
+					<div class="layer_contents">
+						<form action="" class="listModifyForm">
+							<ul>
+								<li>
+									<label for="option13">학년도</label>
+									<select name="year" id="option13">
+										<option value="">2020</option>
+									</select>
+								</li>
+								<li>
+									<label for="option2">학교급</label>
+									<select name="school" id="option2">
+										<option value="">고등학교</option>
+									</select>
+								</li>
+								<li>
+									<label for="option14">구분</label>
+									<select name="group" id="option14">
+										<option value="">학생</option>
+									</select>
+								</li>
+								<li>
+									<label for="option3">과정</label>
+									<select name="process" id="option3">
+										<option value="">주간</option>
+									</select>
+								</li>
+
+								<li>
+									<label for="option5">학년</label>
+									<select name="school_year" id="option5">
+										<option value="">2</option>
+									</select>
+								</li>
+								<li>
+									<label for="option4">계열</label>
+									<select name="affiliation" id="option4">
+										<option value="">일반계</option>
+									</select>
+								</li>
+								<li>
+									<label for="option6">반</label>
+									<select name="class" id="option6">
+										<option value="">2</option>
+									</select>
+								</li>
+								<li>
+									<label for="option15">성별</label>
+									<select name="gender" id="option15">
+										<option value="">남</option>
+									</select>
+								</li>
+								<li>
+									<label for="option16">이름</label>
+									<input type="text" id="option16" title="이름" value="홍길동">
+								</li>
+								<li>
+									<label for="option17">인증번호</label>
+									<input type="text" id="option17" title="인증번호">
+									<input type="reset" class="verificationCodeBtn" value="인증번호 재작성">
+								</li>
+							</ul>
+							<div class="formBtnWrap">
+								<button type="button" class="btn cancle">취소</button>
+								<input type="submit" class="btn save" value="저장" title="작성 저장">
+							</div>
+						</form>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="popupLayerShadow"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

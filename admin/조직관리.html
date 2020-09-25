@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02 active" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="path_bar">
+				<h2 class="skip">대상자관리 목록</h2>
+				<p class="path"><span>대상자관리</span><span>대상자관리 목록</span></p>
+				<div class="user type3">
+					<dl>
+						<dt>교육청</dt>
+						<dd><span>서울특별시강서양천교육지원청</span> ( 담당 서원형 )</dd>
+						<dd><span>접속시각</span> 2020.07.30. 09:25:45</dd>
+					</dl>
+					<button class="logoutBtn" onclick="alert('로그아웃되었습니다.'); location.href='../admin/login.html';">로그아웃</button>
+				</div>
+			</div>
+			<div class="subpage">
+				<div class="search_detail">
+					<ul>
+						<li class="group group1">
+							<label for="option2">학교급</label>
+							<select name="school" id="option2" title="school">
+								<option value="">고등학교</option>
+							</select>
+						</li>
+						<li class="group group2">
+							<label for="detailSearch" class="skip">조회</label>
+							<input type="submit" id="detailSearch" class="btn" value="조회">
+						</li>
+					</ul>
+				</div>
+				<div class="contents">
+					<div class="tbl_bo_search">
+						<div class="group1">
+							<label for="boSearch">검색</label>
+							<div class="layer1">
+								<input type="text" id="boSearch">
+								<button type="submit" class="btn">검색</button>
+							</div>
+						</div>
+						<ul class="linkBtn">
+							<li><button type="button" class="btn delete2">조직삭제</button></li>
+							<li><button type="button" id="registerEvent" class="btn add3">조직추가</button></li>
+						</ul>
+					</div>
+					<div class="tbl_bo_list type6 tbl_scroll">
+						<table>
+							<thead>
+								<tr>
+									<th class="col_4">선택</th>
+									<th class="col_5">순번</th>
+									<th class="col_15">학교급</th>
+									<th class="col_20">조직명</th>
+									<th class="col_20">관할조직</th>
+
+									<th class="col_10">시/도</th>
+									<th class="col_10">시/구/군</th>
+									<th class="col_8">적용 시작일</th>
+									<th class="col_8">적용 종료일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>1</td>
+									<td>초등학교</td>
+									<td><a href="javascript:;" class="modifyEvent">강원도춘천교육지원청</a></td>
+									<td>강원도춘천교육지원청</td>
+									<td>강원도</td>
+									<td>춘천시</td>
+									<td class="number">2010.01.01</td>
+									<td class="number">2015.12.31</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_bo_page_nation">
+						<div class="group1">
+							<a class="btn start" href="javascript:;"><span class="skip">처음</span></a>
+							<a class="btn prev" href="javascript:;"><span class="skip">이전</span></a>
+							<a class="page current" href="#">1</a>
+							<a class="page" href="#">2</a>
+							<a class="page" href="#">3</a>
+							<a class="page" href="#">4</a>
+							<a class="page" href="#">5</a>
+							<a class="page" href="#">6</a>
+							<a class="page" href="#">7</a>
+							<a class="page" href="#">8</a>
+							<a class="page" href="#">9</a>
+							<a class="page" href="#">10</a>
+							<a class="btn next" href="javascript:;"><span class="skip">다음</span></a>
+							<a class="btn end" href="javascript:;"><span class="skip">끝</span></a>
+						</div>
+					</div>
+				</div>
+
+				<div id="modifyLayer" class="popupLayer form_layer">
+					<div class="layer_title">
+						<strong>조직 수정</strong>
+					</div>
+					<div class="layer_contents">
+						<form action="" class="listModifyForm">
+							<ul>
+								<li>
+									<label for="option2">학교급</label>
+									<select name="school" id="option2">
+										<option value="">고등학교</option>
+									</select>
+								</li>
+								<li>
+									<label for="option18">조직명</label>
+									<input type="text" id="option18" title="조직명" value="홍길동">
+								</li>
+								<li>
+									<label for="option19">관할조직</label>
+									<select name="organization" id="option19" class="long">
+										<option value="">강원도춘천교육지원청</option>
+									</select>
+								</li>
+								<li>
+									<label for="option20">시 &middot; 도</label>
+									<select name="area1" id="option20">
+										<option value="">강원도</option>
+									</select>
+								</li>
+								<li>
+									<label for="option21">시군구</label>
+									<select name="area2" id="option21">
+										<option value="">강릉시</option>
+									</select>
+								</li>
+								<li>
+									<label for="option22">적용시작일</label>
+									<input type="date" id="option22" title="적용시작일" value="2020-08-01">
+								</li>
+								<li>
+									<label for="option23">적용종료일</label>
+									<input type="date" id="option23" title="적용시작일" value="2020-08-01">
+								</li>
+							</ul>
+							<div class="formBtnWrap">
+								<input type="reset" class="btn cancle" value="취소" title="작성 취소">
+								<input type="submit" class="btn save" value="저장" title="작성 저장">
+							</div>
+						</form>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="registerLayer" class="popupLayer form_layer">
+					<div class="layer_title">
+						<strong>조직 등록</strong>
+					</div>
+					<div class="layer_contents">
+						<form action="" class="listModifyForm">
+							<ul>
+								<li>
+									<label for="option2">학교급</label>
+									<select name="school" id="option2">
+										<option value="">고등학교</option>
+									</select>
+								</li>
+								<li>
+									<label for="option18">조직명</label>
+									<input type="text" id="option18" title="조직명" value="홍길동">
+								</li>
+								<li>
+									<label for="option19">관할조직</label>
+									<select name="organization" id="option19" class="long">
+										<option value="">강원도춘천교육지원청</option>
+									</select>
+								</li>
+								<li>
+									<label for="option20">시 &middot; 도</label>
+									<select name="area1" id="option20">
+										<option value="">강원도</option>
+									</select>
+								</li>
+								<li>
+									<label for="option21">시군구</label>
+									<select name="area2" id="option21">
+										<option value="">강릉시</option>
+									</select>
+								</li>
+								<li>
+									<label for="option22">적용시작일</label>
+									<input type="date" id="option22" title="적용시작일" value="2020-08-01">
+								</li>
+								<li>
+									<label for="option23">적용종료일</label>
+									<input type="date" id="option23" title="적용시작일" value="2020-08-01">
+								</li>
+							</ul>
+							<div class="formBtnWrap">
+								<input type="reset" class="btn cancle" value="취소" title="작성 취소">
+								<input type="submit" class="btn save" value="저장" title="작성 저장">
+							</div>
+						</form>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="popupLayerShadow"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

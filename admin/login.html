@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="login_wrap">
+		<div class="login">
+			<h1>건강상태 자가진단</h1>
+			<form method="" action="" class="loginForm">
+				<ul class="loginInfo">
+					<li><label for="login_id">아이디</label><input type="text" id="login_id" title="아이디" placeholder="ID" onfocus="this.placeholder=''" onblur="this.placeholder='ID'"></li>
+					<li><label for="login_pw">비밀번호</label><input type="password" id="login_pw" title="비밀번호" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"></li>
+				</ul>
+				<!-- <span class="automaticLogin"><input type="checkbox" id="automaticLogin"><label for="automaticLogin">자동로그인</label></span> -->
+			</form>
+			<button type="submit" class="loginBtn" onclick="location.href='../admin/대상자관리1.html'">로그인</button>
+			<ul class="login_menu">
+				<li><a href="#">관리자 신청</a></li>
+			</ul>
+			<p class="login_logo"><span class="skip">교육부</span></p>
+		</div>
+		<footer id="footer">
+			<cite>COPYRIGHT KERIS.ALL RIGHTS RESERVED.</cite>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02 active" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="path_bar">
+				<h2 class="skip">대상자관리 목록</h2>
+				<p class="path"><span>자가진단결과</span><span>개인별 학생 건강상태 설문조사 결과</span></p>
+				<div class="user type3">
+					<dl>
+						<dt>교육청</dt>
+						<dd><span>서울특별시강서양천교육지원청</span> ( 담당 서원형 )</dd>
+						<dd><span>접속시각</span> 2020.07.30. 09:25:45</dd>
+					</dl>
+					<button class="logoutBtn" onclick="alert('로그아웃되었습니다.'); location.href='../admin/login.html';">로그아웃</button>
+				</div>
+			</div>
+			<div class="subpage">
+				<div class="search_detail">
+					<ul>
+						<li class="group group1">
+							<em>기간</em>
+							<input type="date" value="2020-08-04" id="date1" title="기간 시작일"> ~ <input type="date" value="2020-08-04" id="date2" title="기간 마지막일">
+						</li>
+					</ul>
+					<ul>
+						<li class="group group1 clear">
+							<label for="option7">응답여부</label>
+							<select name="response" id="option7" title="응답여부">
+								<option value="전체">전체</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option8">체온</label>
+							<select name="temperature" id="option8" title="체온">
+								<option value="전체">전체</option>
+								<option value="이상 및 발열감">이상 및 발열감</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option9">이상유무</label>
+							<select name="problem" id="option9" title="이상유무">
+								<option value="">전체</option>
+								<option value="후각 미각소실">후각&middot;미각소실</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option10">여행유무</label>
+							<select name="travel" id="option10" title="여행유무">
+								<option value="전체">전체</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option11">동거가족 여행여부</label>
+							<select name="Family_trip" id="option11" title="동거가족 여행여부">
+								<option value="전체">전체</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option12">동거가족 자가격리</label>
+							<select name="isolate" id="option12" title="동거가족 자가격리">
+								<option value="전체">전체</option>
+							</select>
+						</li>
+						<li class="group group2">
+							<label for="detailSearch" class="skip">조회</label>
+							<input type="submit" class="btn" value="조회">
+						</li>
+					</ul>
+					<p><span class="color_red style_bold">*</span> 조회기간의 응답 항목이 모두 합사되어 표시됩니다.</p>
+				</div>
+				<div class="contents">
+					<div class="tbl_bo_search">
+						<!-- <div class="group1">
+							<label for="boSearch">검색</label>
+							<div class="layer1">
+								<input type="text" id="boSearch">
+								<button type="submit" class="btn">검색</button>
+							</div>
+						</div> -->
+						<p class="group2"><span>반별 학생 건강상태 설문조사 결과</span> : 조회기간 2020년 07월 24일 ~ 2020년 07월 24일</p>
+						<ul class="linkBtn">
+							<li><button type="button" class="btn excel">엑셀 다운로드</button></li>
+						</ul>
+					</div>
+					<div class="tbl_bo_list type4-3 tbl_scroll">
+						<table>
+							<caption>개인별 학생 건강상태 설문조사 결과 검색</caption>
+							<thead>
+								<tr>
+									<th rowspan="2" class="col_8">학교</th>
+									<th rowspan="2" class="col_8">대상자</th>
+									<th colspan="2" class="col_10">설문응답</th>
+									<th colspan="2" class="col_8">등교여부</th>
+									<th colspan="2" class="col_8">체온 <br>(정상범위 37.5℃)</th>
+									<th colspan="8" class="col_32">코로나19 의심 증상</th>
+									<th colspan="2" class="col_8">위험지역 여행</th>
+									<th colspan="2" class="col_10">동거가족 <br>위험지역 여행</th>
+									<th colspan="2" class="col_8">동거가족 <br>자가격리</th>
+								</tr>
+								<tr>
+									<th class="col_5">응답자</th>
+									<th class="col_5">응답률</th>
+									<th class="col_4">가능</th>
+									<th class="col_4">중지</th>
+									<th class="col_4">정상</th>
+									<th class="col_4">이상 및 발열감</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">기침</th>
+									<th class="col_4">호흡곤란</th>
+									<th class="col_4">오한</th>
+									<th class="col_4">근육통</th>
+									<th class="col_4">두통</th>
+									<th class="col_4">인후통</th>
+									<th class="col_4">후각 &middot; 미각소실</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">있음</th>
+									<th class="col_5">없음</th>
+									<th class="col_5">있음</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">있음</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>100명</td>
+									<td>100명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td><span class="text">성산 초등학교</span></td>
+									<td>25명</td>
+									<td>25명</td>
+									<td><span class="color_blue">100%</span></td>
+									<td>25</td>
+									<td>25</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

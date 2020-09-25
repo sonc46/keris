@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>학생 건강상태 자가진단</title>
+	<link rel="stylesheet" href="resources/css/common_20200904.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/placeholders.min.js"></script>
+	<script src="resources/js/classList.min.js"></script>
+	<script src="resources/js/common.js"></script>
+</head>
+<body>
+	<header id="header">
+		<h1>
+			<em><span class="skip">교육부</span></em>
+			<!-- <em><span class="skip">경상북도 교육청</span></em> -->
+		</h1>
+		<a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
+		<ul id="topMenuWrap">
+			<li><a class="topmenu01" href="main.html">자가진단</a></li>
+			<li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
+			<li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
+			<li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
+			<li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+			<li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
+			<li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+		</ul>
+		<div id="topMenuShadow"></div>
+	</header>
+	<div id="container">
+		<div class="title_bar">
+			<h2><strong>건강상태 자가진단</strong></h2>
+			<ul>
+				<li><a href="main.html">처음으로</a></li>
+			</ul>
+		</div>
+		<div class="subpage">
+            <ul class="step_bar">
+                <li class="step_bar_num step_bar1 current">
+                    <p>로그인 <span class="language_contents">Login</span></p><!-- 20200904-->
+                </li>
+                <li class="step_bar_arrow"></li>
+                <li class="step_bar_num step_bar2">
+                    <p>진단참여 <span class="language_contents">Confirmation</span></p><!-- 20200904-->
+                </li>
+                <li class="step_bar_arrow"></li>
+                <li class="step_bar_num step_bar3">
+                    <p>결과확인 <span class="language_contents">Results</span></p><!-- 20200904-->
+                </li>
+            </ul>
+			<div class="contents">
+				<p class="guide_user">설정한 비밀번호를 입력하세요.
+					<span class="language_contents">Enter password</span><!-- 20200904-->
+				</p>
+				<form id="WriteInfoForm" action="#" method="post">
+					<table>
+						<caption>비밀번호 입력</caption>
+						<colgroup>
+							<col class="col_40">
+							<col class="col_60">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">비밀번호
+									<span class="language_contents">Password</span><!-- 20200904-->
+								</th>
+								<td>
+									<input type="text" class="input_text_common" title="비밀번호" maxlength="4" placeholder="숫자 4자리">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+				<input type="submit" id="btnConfirm" onclick="location.href='개인정보동의보기.html'" value="확인 / Confirm"><!-- 20200904-->
+				<div class="guid_contents">
+					<ul>
+						<li class="color_blue">비밀번호 분실 시 학교로 비밀번호 초기화를 요청하시기 바랍니다.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

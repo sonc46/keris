@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01 active" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html" class="active">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="subpage">
+				<div id="registerLayer" class="popupLayer form_layer" style="display:block">
+					<div class="layer_title">
+						<strong>관리자신청</strong>
+					</div>
+					<div class="layer_contents">
+						<form action="" class="listModifyForm">
+							<ul>
+								<li>
+									<label for="option26">시도</label>
+									<select name="year" id="option26">
+										<option value="">강원도</option>
+									</select>
+								</li>
+								<li>
+									<label for="option2">기관(학교)명</label>
+									<div class="searchResultsWrap">
+										<input type="text" id="option2" class="middle" value="가곡고등학교">
+										<ul id="searchResultsList">
+											<li><a href="#" class="searchResultsKeyword">가곡고등학교</a></li>
+											<li><a href="#" class="searchResultsKeyword">가곡고등학교</a></li>
+											<li><a href="#" class="searchResultsKeyword">가곡대학교</a></li>
+											<li><a href="#" class="searchResultsKeyword">가곡유치원</a></li>
+											<li><a href="#" class="searchResultsKeyword">가곡중학교</a></li>
+											<li><a href="#" class="searchResultsKeyword">가곡초등학교</a></li>
+										</ul>
+									</div>
+									<button type="button" class="searchResultsBtn" onclick="searchResultsEvent();">검색</button>
+								</li>
+								<li>
+									<label for="option27">신청권한</label>
+									<select name="apply" id="option27">
+										<option value="">기관(학교)관리자</option>
+										<option value="">기관마스터</option>
+										<option value="">학년반(부서)</option>
+									</select>
+								</li>
+								<li>
+									<label for="member_id">아이디</label>
+									<input type="text" id="member_id" name="member_id" placeholder="업무포털 아이디">
+									<button type="button" class="idResultsBtn" onclick="">중복확인</button>
+								</li>
+								<li>
+									<label for="member_pw">비밀번호</label>
+									<input type="password" id="member_pw" name="member_pw" placeholder="8자리 이상">
+								</li>
+								<li>
+									<label for="member_name">이름</label>
+									<input type="text" id="member_name" name="member_name">
+								</li>
+								<li>
+									<label for="member_name">생년월일</label>
+									<input type="text" id="member_name" name="member_birth" placeholder="YYMMDD 6자리">
+								</li>
+								<li>
+									<label for="member_phone">핸드폰번호</label>
+									<input type="tel" id="member_phone" name="member_phone" pattern="d{3}-\d{3,4}-\d{4}" title="형식 000-0000-0000" autocomplete="off" placeholder="'-'없이 입력">
+								</li>
+							</ul>
+							<div class="formBtnWrap">
+								<button type="button" class="btn cancle" onclick="'">취소</button>
+								<input type="submit" class="btn save" value="신청" title="신청">
+							</div>
+						</form>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="popupLayerShadow" style="display:block"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

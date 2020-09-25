@@ -1,0 +1,678 @@
+@charset "UTF-8";
+/* 학교찾기 */
+.layerSchoolSelectWrap {
+  padding: 4%;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+}
+
+.layerSchoolSelectWrap .layerSchoolTable {
+  width: 100%;
+}
+
+.layerSchoolSelectWrap .layerSchoolTable tbody tr th {
+  width: 25%;
+  padding: .375em 0;
+  letter-spacing: -0.075em;
+  color: #3070b0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.layerSchoolSelectWrap .layerSchoolTable tbody tr td {
+  padding: .375em 0;
+  vertical-align: middle;
+}
+
+.layerSchoolSelectWrap .layerSchoolTable tbody tr td .searchArea {
+  width: 100%;
+  height: 2.75em;
+  line-height: 2.75;
+  border: 1px solid #959595;
+  border-radius: .125em;
+  padding: 0 .5em;
+}
+
+.layerSchoolSelectWrap .layerSchoolTable tbody tr td .searchBtn {
+  display: block;
+  width: calc( 100% - .25em);
+  min-width: 3.25em;
+  height: 2.75em;
+  line-height: 2.75;
+  margin-left: .25em;
+  background: #aaa;
+  color: #fff;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea {
+  margin: 1em 0 0;
+  background: #fff;
+  border-top: 2px solid #409ece;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li {
+  display: table;
+  width: 100%;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li span {
+  display: table-cell;
+  width: 25%;
+  text-align: center;
+  vertical-align: middle;
+  background: #e7f3f7;
+  border-bottom: 1px solid #ccc;
+  color: #555;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li p {
+  display: table-cell;
+  width: 75%;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: .875em;
+  color: #666;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li p a {
+  display: block;
+  padding: .5em .75em;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li p a em {
+  display: block;
+  color: #3070b0;
+  font-size: 1.071em;
+  font-weight: 700;
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li p a:hover {
+  background: #fffef4;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.layerSchoolSelectWrap .layerSchoolArea li:last-child {
+  margin-bottom: .5em;
+}
+
+.layerSchoolSelectWrap .nodata {
+  padding: 1em 0;
+  font-size: .875em;
+  text-align: center;
+  color: #999;
+}
+
+.layerArrowWrap .countPages {
+  float: left;
+  width: block;
+  width: 28%;
+  height: 2em;
+  line-height: 2;
+  text-align: center;
+  font-weight: 700;
+  border-radius: .125em;
+  color: #999;
+  letter-spacing: .1em;
+}
+
+.layerArrowWrap .countPages em {
+  color: #2962a0;
+}
+
+.layerArrowWrap button {
+  float: left;
+  display: block;
+  width: 36%;
+  height: 2.5em;
+  position: relative;
+  font-size: .875em;
+  font-weight: 700;
+}
+
+.layerArrowWrap button:nth-child(n+2) {
+  border-left-width: 0;
+}
+
+.layerArrowWrap button.prev::before {
+  content: '';
+  display: inline-block;
+  width: 2em;
+  height: 1px;
+  margin-right: .75em;
+  background: #666;
+}
+
+.layerArrowWrap button.prev::after {
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1px;
+  background: #666;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  margin: -.25em 0 0 -2.5em;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.layerArrowWrap button.next::after {
+  content: '';
+  display: inline-block;
+  width: 2em;
+  height: 1px;
+  margin-left: .75em;
+  background: #666;
+}
+
+.layerArrowWrap button.next::before {
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1px;
+  background: #666;
+  position: absolute;
+  top: 60%;
+  right: 50%;
+  margin: -.25em -2.5em 0 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.layerArrowWrap button.off {
+  color: #b5b5b5;
+}
+
+.layerArrowWrap button.off::before {
+  background: #b5b5b5;
+}
+
+.layerArrowWrap button.off::after {
+  background: #b5b5b5;
+}
+
+.layerArrowWrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#softBoardListLayer {
+  /* 알림,공지보기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: #f3f3f3;
+}
+
+#softBoardListLayer .layerTitle {
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  position: relative;
+}
+
+#softBoardListLayer .layerTitle strong {
+  display: block;
+  padding: 0 2em;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #073765;
+  text-align: center;
+  height: 2.5em;
+  line-height: 2.5;
+}
+
+#softBoardListLayer .layerTitle .layerBackBtn {
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  margin-top: -1.25em;
+  background: url("../images/common/arrow_layerBackBtn.svg") no-repeat 50%/60%;
+}
+
+#softBoardListLayer .layerContentsWrap {
+  padding: 1em 0;
+  margin: 0 4%;
+  height: calc(100vh - 3.75em);
+  overflow: auto;
+  border-radius: .125em;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContentsTitle {
+  padding: .875em .25em;
+  background: #e9f9ff;
+  text-align: center;
+  border: 1px solid #cfcfcf;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContentsTitle strong {
+  display: block;
+  margin-bottom: .25em;
+  font-size: 1.125em;
+  font-weight: 700;
+  color: #2962a0;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContentsTitle span {
+  font-size: .938em;
+  color: #888;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents {
+  padding: 1.25em 1em 1.5em;
+  line-height: 1.5;
+  color: #666;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-top: 0;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo {
+  margin: 0 0 1em;
+  line-height: 1;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo li {
+  float: left;
+  display: block;
+  font-size: .938em;
+  color: #888;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo li:nth-child(2):before {
+  content: '';
+  display: inline-block;
+  vertical-align: bottom;
+  width: 1px;
+  height: .875em;
+  margin: -.125em .5em 0;
+  background: #cacaca;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo li:nth-child(3) {
+  float: right;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo li:nth-child(3) .btn {
+  padding: .4556em .5em .4556em 1.75em;
+  margin: -.9246em 0 0 .5em;
+  font-size: .938em;
+  color: #173b7c;
+  border: 1px solid #bfbfbf;
+  border-radius: .125em;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo li:nth-child(3) .btn.delete {
+  background: #fbfbfb url("../images/common/btn_delmsg.png") no-repeat 0.5em 50%/1.125em 1.125em;
+}
+
+#softBoardListLayer .layerContentsWrap .layerContents .layerContentsInfo::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#softBoardListLayer .layerAgreeWrap {
+  /* 20200828 확인 필요 */
+  padding: 1em 0;
+  margin: 0 4%;
+  height: calc(100vh - 3.75em);
+  overflow: auto;
+  border-radius: .125em;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl {
+  /* 20200828 확인 필요 */
+  padding: 1.25em 1em;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl > dt {
+  /* 20200828 확인 필요 */
+  margin-bottom: .5em;
+  font-weight: 700;
+  color: #336fbf;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dt:nth-of-type(n+2) {
+  /* 20200828 확인 필요 */
+  margin-top: 1em;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dd .layerAgreeArea {
+  /* 20200828 확인 필요 */
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #d5d5d5;
+  background: #f6fcff;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dd .layerAgreeArea dt {
+  /* 20200828 확인 필요 */
+  color: #555;
+  font-weight: 700;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dd .layerAgreeArea dt:nth-of-type(n+2) {
+  /* 20200828 확인 필요 */
+  margin-top: .5em;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dd .layerAgreeArea dd {
+  /* 20200828 확인 필요 */
+  color: #666;
+  word-break: keep-all;
+}
+
+#softBoardListLayer .layerAgreeWrap > dl dd .ex_star {
+  /* 20200828 확인 필요 */
+  word-break: keep-all;
+}
+
+.layerBtnWrap {
+  margin: 1em 0;
+}
+
+.layerBtnWrap .layerFullBtn {
+  display: block;
+  width: 100%;
+  padding: .75em;
+  background: #173b7c;
+  font-size: 1.125em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  border-radius: .125em;
+  letter-spacing: -.05em;
+}
+
+.layerAttendWrap {
+  /* 참여현황보기 */
+  padding: 0 0 1em;
+  height: calc(100vh - 2.75em);
+  overflow: auto;
+  border-radius: .125em;
+}
+
+.layerAttendWrap .layerAttendTop {
+  padding: 1.25em 0 4.5em;
+  background: #b4b4b4;
+  color: #fff;
+  text-align: center;
+}
+
+.layerAttendWrap .layerAttendTop p {
+  margin: 0 0 .125em;
+  font-size: 1.188em;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.05em;
+}
+
+.layerAttendWrap .layerAttendTop p strong::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: .875em;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0 .375em;
+}
+
+.layerAttendWrap .layerAttendTop p::before {
+  content: '';
+  display: inline-block;
+  width: 1.125em;
+  height: 1.625em;
+  vertical-align: middle;
+  margin: 0 .125em .125em 0;
+  background: url("../images/common/ico_layerAttendTop.svg") no-repeat 50%/contain;
+}
+
+.layerAttendWrap .layerAttendTop span {
+  display: block;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.layerAttendWrap .layerAttend {
+  min-height: calc(100vh - 14.625em);
+  background: #fff;
+  padding: 0 0 1.5em;
+  margin: -3.5em 4% 0;
+  border-radius: .25em;
+}
+
+.layerAttendWrap .layerAttend .layerAttendInfo {
+  padding: 1em 0;
+  text-align: center;
+  color: #555;
+}
+
+.layerAttendWrap .layerAttend .layerAttendInfo li:first-child {
+  margin: 0 0 .25em;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.layerAttendWrap .layerAttendArea > li {
+  padding: 1em 0;
+  margin: 0 4%;
+  border-bottom: 1px dashed #ccc;
+}
+
+.layerAttendWrap .layerAttendArea > li p {
+  font-size: 1.063em;
+  font-weight: 700;
+  color: #42506a;
+  position: relative;
+}
+
+.layerAttendWrap .layerAttendArea > li p span {
+  position: absolute;
+  top: -.25em;
+  right: 0;
+  display: block;
+  width: 4em;
+  padding: .5em 0;
+  line-height: 1;
+  border-radius: 1em;
+  font-size: .938em;
+  background: #f5f5f5;
+  color: #373737;
+  border: 1px solid #cfcfcf;
+  text-align: center;
+}
+
+.layerAttendWrap .layerAttendArea > li p span.yes {
+  background: #fffce9;
+  color: #cb3500;
+  border-color: #f48021;
+}
+
+.layerAttendWrap .layerAttendArea > li p span.no {
+  background: #f5f5f5;
+  color: #173b7c;
+}
+
+.layerAttendWrap .layerAttendArea > li p::before {
+  content: '';
+  display: inline-block;
+  width: .25em;
+  height: .25em;
+  margin: 0 .25em .5em 0;
+  vertical-align: bottom;
+  border-radius: 100%;
+  background: #78bae7;
+}
+
+.layerAttendWrap .layerAttendArea > li li {
+  margin: .125em 0 0 .5em;
+  font-weight: 700;
+  color: #777;
+}
+
+.layerAttendWrap .layerAttendArea > li li:first-child {
+  margin-top: .5em;
+}
+
+.layerAttendWrap .layerAttendArea > li li::before {
+  content: '';
+  display: inline-block;
+  width: 1.125em;
+  height: 1.125em;
+  vertical-align: middle;
+  margin: 0 .25em .125em 0;
+  background: url("../images/common/softBoardAttend_check.svg") no-repeat 50%/contain;
+}
+
+.layerAttendWrap .layerAttendArea > li:first-child {
+  border-top: 1px dotted #ccc;
+}
+
+.layerAttendWrap.type2 .layerAttendTop {
+  background: #2198ea;
+}
+
+.layerAttendWrap.type2 .layerAttendTop p::before {
+  background-image: url("../images/common/ico_layerAttendTop_no.svg");
+}
+
+.layerAttendWrap.type3 .layerAttendTop {
+  background: #ef9043;
+}
+
+.layerAttendWrap.type3 .layerAttendTop p::before {
+  background-image: url("../images/common/ico_layerAttendTop_yes.svg");
+}
+
+#softBoardListLayer .layerAttendWrap .layerBtnWrap {
+  margin: 1em 4%;
+}
+
+#softBoardListLayer .layerManageWrap {
+  /* 동선관리 */
+  padding: 1em 0;
+  margin: 0 4%;
+  height: calc(100vh - 3.75em);
+  overflow: auto;
+  border-radius: .125em;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontentsDate {
+  width: 100%;
+  padding: 1.5em .25em 0;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #cfcfcf;
+  border-bottom: 0;
+  text-align: center;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontentsDate span {
+  display: inline-block;
+  padding: .375em 1.5em;
+  border-radius: 1.5em;
+  line-height: 1;
+  font-size: 1.125em;
+  font-weight: 700;
+  border: .125em solid #ffc000;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents {
+  padding: 1.25em 1em 1.5em;
+  line-height: 1.5;
+  color: #666;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-top: 0;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul {
+  position: relative;
+  padding-left: 2em;
+  position: relative;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul li {
+  font-weight: 700;
+  font-size: .938em;
+  color: #888;
+  line-height: 1;
+  letter-spacing: 0;
+  position: relative;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul li em {
+  display: block;
+  padding-top: .25em;
+  color: #004196;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul li strong {
+  display: block;
+  margin: .75em 0 .5em;
+  color: #333;
+  font-size: 1.125em;
+  letter-spacing: -0.05em;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul li span {
+  display: block;
+  padding-bottom: 1.875em;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul li::before {
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin-left: .25em;
+  background: #ffc000;
+  border: .25em solid #fff;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: -2em;
+}
+
+#softBoardListLayer .layerManageWrap .layerMontents ul::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  border-left: 2px dotted #ccc;
+  position: absolute;
+  top: 0;
+  left: 1em;
+}
+
+#softBoardListLayer .layerManageWrap .layerBtnWrap {
+  margin: 1em 0;
+}
+
+#softBoardListLayer .layerManageWrap .layerBtnWrap .layerFullBtn {
+  display: block;
+  width: 100%;
+  padding: .75em;
+  background: #173b7c;
+  font-size: 1.125em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  border-radius: .125em;
+  letter-spacing: -.05em;
+}

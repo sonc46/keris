@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02 active" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="subpage">
+				<div id="registerLayer" class="popupLayer form_layer" style="display:block">
+					<div class="layer_title">
+						<strong>학교찾기</strong>
+					</div>
+					<div class="layer_contents">
+						<form action="" class="listModifyForm">
+							<table>
+								<tbody>
+									<tr>
+										<th>시/도</th>
+										<td>
+											<select name="apply" id="searchPopOrganization" class="long" title="시/도">
+												<option value="all">전체</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>학교급</th>
+										<td>
+											<select name="apply" id="searchPopSchool" class="long" title="학교급">
+												<option value="all">전체</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th>학교명</th>
+										<td>
+											<input type="text" class="long">
+											<input type="submit" class="verificationCodeBtn" value="찾기">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="searchResultList type2">
+								<ul>
+									<!-- <li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<span>서울</span>
+											<p><em>강동고등학교</em> 대구광역시 동구 금강로 65</p>
+										</a>
+									</li> -->
+								</ul>
+								<p class="nodata">학교명을 입력 후 찾기 버튼을 클릭하십시오.</p>
+							</div>
+						</form>
+
+						<div class="formBtnWrap">
+							<button type="button" class="btn cancle">취소</button>
+							<input type="submit" class="btn save" value="선택" title="선택">
+						</div>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="popupLayerShadow" style="display:block"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

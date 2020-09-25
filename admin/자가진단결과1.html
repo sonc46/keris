@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>자가진단 시스템</title>
+	<link rel="stylesheet" href="resources/css/common.css">
+	<link rel="stylesheet" href="resources/css/layer.css">
+	<!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+	<script src="resources/js/common.js"></script>
+	<script src="resources/js/prefixfree.min.js"></script>
+	<script src="resources/js/placeholders.min.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<header id="header">
+			<h1 class="logo"><span class="skip">건강상태 자가진단</span></h1>
+			<ul id="lnb">
+				<li><a class="ico lnb01" href="관리자관리.html">관리자관리</a></li>
+				<li><a class="ico lnb02 active" href="자가진단결과1.html">현황통계</a></li>
+				<li><a class="ico lnb03" href="대상자관리2.html">대상자관리</a></li>
+				<li><a class="ico lnb04" href="알림관리.html">알림관리</a></li>
+				<!-- <li><a class="ico lnb05" href="공지관리.html">공지관리</a></li> -->
+				<li><a class="ico lnb07" href="#">오늘 우리반<br>참여현황</a></li>
+				<li><a class="lnb06" href="#">매뉴얼<br>&middot;<br>FAQ</a></li>
+			</ul>
+		</header>
+		<div id="container">
+			<div class="path_bar">
+				<h2 class="skip">개인별 학생 건강상태 설문조사 결과</h2>
+				<p class="path"><span>자가진단결과</span><span>개인별 학생 건강상태 설문조사 결과</span></p>
+				<div class="user type2">
+					<dl>
+						<dt>담임</dt>
+						<dd><span>김정화</span> ( 서울 화곡초등학교/1-5 )</dd>
+						<dd><span>접속시각</span> 2020.07.30. 09:25:45</dd>
+					</dl>
+					<button class="logoutBtn" onclick="alert('로그아웃되었습니다.'); location.href='../admin/login.html';">로그아웃</button>
+				</div>
+			</div>
+			<div class="subpage">
+				<div class="search_detail">
+					<ul>
+						<li class="group group1">
+							<label for="option5">학년</label>
+							<select name="school_year" id="option5">
+								<option value="1">1</option>
+							</select>
+						</li>
+						<li class="group group1">
+							<label for="option6">반</label>
+							<select name="class" id="option6">
+								<option value="1">1</option>
+							</select>
+						</li>
+						<li class="group group2">
+							<label for="detailSearch" class="skip">조회</label>
+							<input type="submit" id="detailSearch" class="btn" value="조회">
+						</li>
+					</ul>
+					<p><span class="color_red style_bold">*</span> 계열구분이 존재하는 학교의 경우도 계열구분은 별도로 표시되지 않습니다.</p>
+				</div>
+				<div class="contents">
+					<div class="tbl_bo_search">
+						<!-- <div class="group1">
+							<label for="boSearch">검색</label>
+							<div class="layer1">
+								<input type="text" id="boSearch">
+								<button type="submit" class="btn">검색</button>
+							</div>
+						</div> -->
+						<p class="group2"><span>반별 학생 건강상태 설문조사 결과</span> : 조회기간 2020년 07월 24일 ~ 2020년 07월 24일</p>
+						<ul class="linkBtn">
+							<li><button type="button" class="btn excel">엑셀 다운로드</button></li>
+						</ul>
+					</div>
+					<div class="tbl_bo_list type4-1 tbl_scroll">
+						<table>
+							<caption>개인별 학생 건강상태 설문조사 목록</caption>
+							<thead>
+								<tr>
+									<th rowspan="2" class="col_5">학년</th>
+									<th rowspan="2" class="col_4">반</th>
+									<th rowspan="2" class="col_4">번호</th>
+									<th rowspan="2" class="col_11">이름</th>
+									<th colspan="2" class="col_10">등교 여부</th>
+									<th colspan="2" class="col_8">체온 <br>(정상범위 37.5℃)</th>
+									<th colspan="8" class="col_32">코로나19 의심 증상</th>
+									<th colspan="2" class="col_8">위험지역 여행</th>
+									<th colspan="2" class="col_10">동거가족 <br>위험지역 여행</th>
+									<th colspan="2" class="col_8">동거가족 <br>자가격리</th>
+								</tr>
+								<tr>
+									<th class="col_5">가능</th>
+									<th class="col_5">중지</th>
+									<th class="col_4">정상</th>
+									<th class="col_4">이상 및 <br>발열</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">기침</th>
+									<th class="col_4">호흡곤란</th>
+									<th class="col_4">오한</th>
+									<th class="col_4">근육통</th>
+									<th class="col_4">두통</th>
+									<th class="col_4">인후통</th>
+									<th class="col_4">후각&middot;<br>미각소실</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">있음</th>
+									<th class="col_5">없음</th>
+									<th class="col_5">있음</th>
+									<th class="col_4">없음</th>
+									<th class="col_4">있음</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1학년</td>
+									<td>12반</td>
+									<td>1</td>
+									<td><a href="javascript:;" class="modifyEvent">강지원</a></td>
+									<td>O</td>
+									<td></td>
+									<td>O</td>
+									<td></td>
+									<td>O</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>O</td>
+									<td></td>
+									<td>O</td>
+									<td></td>
+									<td>O</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbl_bo_page_nation">
+						<div class="group1">
+							<a class="btn start" href="javascript:;"><span class="skip">처음</span></a>
+							<a class="btn prev" href="javascript:;"><span class="skip">이전</span></a>
+							<a class="page current" href="#">1</a>
+							<a class="page" href="#">2</a>
+							<a class="page" href="#">3</a>
+							<a class="page" href="#">4</a>
+							<a class="page" href="#">5</a>
+							<a class="page" href="#">6</a>
+							<a class="page" href="#">7</a>
+							<a class="page" href="#">8</a>
+							<a class="page" href="#">9</a>
+							<a class="page" href="#">10</a>
+							<a class="btn next" href="javascript:;"><span class="skip">다음</span></a>
+							<a class="btn end" href="javascript:;"><span class="skip">끝</span></a>
+						</div>
+					</div>
+				</div>
+
+				<div id="modifyLayer" class="popupLayer form_layer">
+					<div class="layer_title">
+						<strong>학생 인적사항</strong>
+						<span>1학년 1반 7번</span>
+						<span>이름 : 김하영</span>
+					</div>
+					<div class="layer_contents">
+						<div class="tbl_bo_list type4-1-1 tbl_scroll">
+						<table>
+								<caption>학생 건강상태 설문조사 결과 검색</caption>
+								<thead>
+									<tr>
+										<th rowspan="2" class="col_8">일자</th>
+										<th colspan="2" class="col_8">등교여부</th>
+										<th colspan="2" class="col_10">체온 <br>(정상범위 37.5℃)</th>
+										<th colspan="8" class="col_48">코로나19 의심 증상</th>
+										<th colspan="2" class="col_8">위험지역 <br>여행 여부</th>
+										<th colspan="2" class="col_10">동거가족 <br>위험지역 여행여부</th>
+										<th colspan="2" class="col_8">동거가족 <br>자가격리 여부</th>
+									</tr>
+									<tr>
+										<th class="col_4">가능</th>
+										<th class="col_4">중지</th>
+										<th class="col_5">정상</th>
+										<th class="col_5">이상 및 발열감</th>
+
+										<th class="col_6">없음</th>
+										<th class="col_6">기침</th>
+										<th class="col_6">호흡<br>곤란</th>
+										<th class="col_6">오한</th>
+
+										<th class="col_6">근육통</th>
+										<th class="col_6">두통</th>
+										<th class="col_6">인후통</th>
+										<th class="col_6">후각&middot;미각소실</th>
+
+										<th class="col_4">없음</th>
+										<th class="col_4">있음</th>
+
+										<th class="col_5">없음</th>
+										<th class="col_5">있음</th>
+
+										<th class="col_4">없음</th>
+										<th class="col_4">있음</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>2020-07-24</td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+										<td>O</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<a class="popupLayerClose" href="javascript:;">close</a>
+				</div>
+				<div id="popupLayerShadow"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+@charset "utf-8";
+
+
+
+/* 기본 */
+.popupLayer {display:none;}
+.popupLayer {position:fixed; z-index:9999; top:20px; left:50%; padding:0; width:auto; height:auto; max-height:760px; background:#fff; transform:translateX(-50%);}
+.popupLayer [readonly] {
+	color: #797979 !important;
+	font-weight: 400 !important;
+	background: #f5f5f5 !important;
+	border: 1px solid #ccc !important;
+	cursor: auto;
+}
+.popupLayer select , 
+.popupLayer textarea , 
+.popupLayer [type="date"] , 
+.popupLayer [type="password"] , 
+.popupLayer [type="text"] {
+	color: #2962a0;
+	font-weight: 700;
+}
+
+.popupLayer .layer_title {margin:20px;}
+.popupLayer .layer_contents {margin:20px;}
+.formBtnWrap {width:100%; text-align:center; margin:12px 0 36px;}
+.formBtnWrap .btn {display:inline-block; height:44px; font-size:18px; font-weight:700;}
+.formBtnWrap .btn.cancle {width:9em; margin-right:.25em; background:#868991; color:#fff;}
+.formBtnWrap .btn.save {width:9em; background:#2962a0; color:#fff;}
+.formBtnWrap .btn.check {width:18em; background:#2962a0; color:#fff;}
+.popupLayerClose {display:block; width:30px; height:28px; border:1px solid #fff; position:absolute; font-size:0;}
+.popupLayerClose:before {content:''; display:block; width:18px; height:1px; background:#fff; position:absolute; top:12px; right:5px; transform:rotate(43deg);}
+.popupLayerClose:after {content:''; display:block; width:18px; height:1px; background:#fff; position:absolute; top:12px; right:5px; transform:rotate(-43deg);}
+#popupLayerShadow {display:none; position:fixed; z-index:9998; top:0; left:0;width:100%; height:100%; background:rgba(0,0,0,.5);}
+
+/* li */
+.listModifyForm li {border-top:1px solid #e1e1e1}
+.listModifyForm li:first-child {border-top:1px solid #aacadb}
+.listModifyForm li:last-child {border-bottom:1px solid #aacadb}
+.listModifyForm li * {display:inline-block; vertical-align:middle;}
+.listModifyForm li.tightList {display:table; width:100%;}
+.listModifyForm li.tightList span {display:table-cell;}
+.listModifyForm li.tightList span:nth-child(1) {width:25%; background:#f7f7f7;}
+.listModifyForm li.tightList span:nth-child(1) label {width:100%; height:100%; background:transparent;}
+.listModifyForm li.tightList span:nth-child(2) {width:75%; padding:10px;}
+.listModifyForm li.tightList span:nth-child(2) textarea {width:100%; height:10em; color:#666;}
+.listModifyForm li.tightList span:nth-child(2) input {width:100%; margin:0;}
+.listModifyForm .title {width:25%; padding:10px 0; line-height:35px; text-align:center; color:#666; background:#f7f7f7;}
+.listModifyForm label {width:25%; padding:10px 0; line-height:35px; text-align:center; color:#666; background:#f7f7f7;}
+.listModifyForm select {width:36%; margin:10px 0;}
+.listModifyForm [type="date"] {width:40%; margin:10px;}
+.listModifyForm [type="tel"] {width:40%; margin:10px;}
+.listModifyForm [type="text"] {width:30%; margin:10px 2px 10px 0;}
+.listModifyForm [type="password"] {width:30%; margin:10px;}
+
+/* table */
+.popupLayer.form_layer .listModifyForm {width:640px}
+.popupLayer.form_layer .listModifyForm table {width:100%}
+.popupLayer.form_layer .listModifyForm tbody tr th {width:25%; padding:10px 0; line-height:35px; color:#666; background:#f7f7f7; border-bottom:1px solid #e1e1e1; vertical-align:middle; font-weight:400;}
+.popupLayer.form_layer .listModifyForm tbody tr td {width:75%; padding:10px; border-bottom:1px solid #e1e1e1}
+.popupLayer.form_layer .listModifyForm tbody tr:first-child th ,
+.popupLayer.form_layer .listModifyForm tbody tr:first-child td {border-top:1px solid #aacadb}
+.popupLayer.form_layer .listModifyForm tbody tr td #writerNotice {font-weight:400}
+.popupLayer.form_layer .listModifyForm tbody tr td .full {width:100%}
+.popupLayer.form_layer .listModifyForm tbody tr td .long {width:16em;}
+.popupLayer.form_layer .listModifyForm tbody tr td select {width:30%; margin:0;}
+.popupLayer.form_layer .listModifyForm tbody tr td [type="date"] {width:40%; margin:0;}
+.popupLayer.form_layer .listModifyForm tbody tr td [type="tel"] {width:40%; margin:0;}
+.popupLayer.form_layer .listModifyForm tbody tr td [type="text"] {margin:0;}
+.popupLayer.form_layer .listModifyForm tbody tr td [type="password"] {width:30%;}
+.popupLayer.form_layer .listModifyForm tbody tr td .verificationCodeBtn {padding:0 16px; margin:0; height:35px; background:#7b8fa4; color:#fff; letter-spacing:-0.075em; font-weight:700;}
+.popupLayer.form_layer .listModifyForm .searchResultList {max-height:15.3em; margin-top:1em; overflow-y:scroll; border-bottom:1px solid #ccc;}
+.popupLayer.form_layer .listModifyForm .searchResultList.type2 {max-height:17.5em}
+.popupLayer.form_layer .listModifyForm .searchResultList.type3 {max-height:16.556em}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li {border:0}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a {border-top:1px solid #ccc;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li:first-child a {border-top-color:#409ece;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a {display:table; width:100%; font-size:.938em;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a span {display:table-cell; width:25%; padding:.5em; vertical-align:middle; text-align:center; color:#555; background:#e7f3f7; border-right:1px solid #ccc;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a p {display:table-cell; padding:.875em 1em; color:#666;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a p em {display:block; color:#3070b0; font-size:1.067em; font-weight:700;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a:hover p {background:#fffef4; box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a strong {display:block; padding:.875em 20px .875em 136px; font-size:1.063em; font-weight:400; color:#666;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a strong em {display:inline-block; margin-right:.25em; color:#3070b0; font-weight:700;}
+.popupLayer.form_layer .listModifyForm .searchResultList ul li a:hover strong {background:#fffef4; box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);}
+.popupLayer.form_layer .listModifyForm .searchResultList .nodata {text-align:center; color:#888; padding:1em 0; background:#f5f5f5;}
+
+
+/**/
+#modifyLayer.tbl_bo_layer .layer_title {background:#349bcf; font-size:19px; font-weight:700; color:#fff;}
+#modifyLayer.tbl_bo_layer .layer_title strong {display:inline-block; width:195px; padding:20px; background:#0a448f; text-align:center;}
+#modifyLayer.tbl_bo_layer .layer_title span {display:inline-block; margin:20px 0 20px 30px;}
+#modifyLayer.tbl_bo_layer .layer_contents {margin:20px;}
+#modifyLayer.tbl_bo_layer .layer_contents .tbl_bo_list {width:1198px}
+#modifyLayer.tbl_bo_layer .popupLayerClose {top:40px; right:34px; border-color:#fff;}
+#modifyLayer.tbl_bo_layer .popupLayerClose:before {background:#fff}
+#modifyLayer.tbl_bo_layer .popupLayerClose:after {background:#fff}
+
+
+/* 대상자관리 */
+/* 관리자신청 */
+.popupLayer.form_layer .layer_title {margin:0; font-size:19px; font-weight:700; color:#fff; background:transparent;}
+.popupLayer.form_layer .layer_title strong {display:block; padding:30px 20px 20px; color:#175d96; font-size:22px; background:transparent;}
+.popupLayer.form_layer .layer_contents {margin:0 20px 20px;}
+.popupLayer.form_layer .popupLayerClose {top:30px; right:20px; border-color:#969696;}
+.popupLayer.form_layer .popupLayerClose:before {background:#969696}
+.popupLayer.form_layer .popupLayerClose:after {background:#969696}
+.popupLayer.form_layer .listModifyForm {width:460px;}
+.popupLayer.form_layer .listModifyForm ul select ,
+.popupLayer.form_layer .listModifyForm ul input {margin-left:10px;}
+.popupLayer.form_layer .listModifyForm .long {width:16em}
+.popupLayer.form_layer .listModifyForm .middle {width:13em}
+.popupLayer.form_layer .searchResultsWrap {position:relative;}
+.popupLayer.form_layer #searchResultsList {position:absolute; top:44px; left:10px; z-index:9; display:block; width:13em; height:0; overflow:hidden; background:#f6fbfe; transition:all .3s; border:0 solid #e1e1e1; box-sizing:border-box;}
+.popupLayer.form_layer #searchResultsList.active {height:10em; overflow:auto; padding:10px 0; border-width:1px;}
+.popupLayer.form_layer #searchResultsList li {display:block; border:0; padding:2px 10px;}
+.popupLayer.form_layer #searchResultsList li a {display:block}
+.popupLayer.form_layer #searchResultsList li a:hover {text-decoration:underline}
+.popupLayer.form_layer .verificationCodeBtn {padding:0 10px; height:35px; background:#7b8fa4; color:#fff; letter-spacing:-0.075em; font-weight:700;}
+.popupLayer.form_layer .searchResultsBtn {padding:0 10px; height:35px; background:#7b8fa4; color:#fff; letter-spacing:-0.075em; font-weight:700;}
+.popupLayer.form_layer .idResultsBtn {padding:0 10px; height:35px; background:#7b8fa4; color:#fff; letter-spacing:-0.075em; font-weight:700;}
+
+/* 알림관리등록 */
+.popupLayer .listMessageWriteForm {width:1000px;}
+.popupLayer .listMessageWriteForm:after {content:''; display:block; clear:both;}
+.popupLayer .listMessageTarget {float:left; width:53%;}
+.popupLayer .listMessageWrite {float:left; width:45%; margin-left:2%;}
+.popupLayer .formBtnWrap {float:left;}
+.popupLayer .listMessageWriteForm .title {display:block; margin:.5em 0; color:#377cb5;}
+.popupLayer .listMessageWriteForm .title:before {content:''; display:inline-block; vertical-align:middle; margin:0 .5em .25em 0; width:.25em; height:.875em; background:#2962a0;}
+.popupLayer .listMessageTarget fieldset {padding:20px 4% 25px; background:#f3f9fc; border:1px solid #aacadb; position:relative;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(1):after {content:''; display:block; width:34px; height:34px; position:absolute; bottom:-17px; left:50%; z-index:1; margin-left:-17px; background:url("../images/common/arrow_check_target.png") no-repeat 50% / 34px;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) {height:221px; padding:0 5%; background:#fff; border-color:#dfdfdf; border-top:0;}
+.popupLayer .listMessageTarget table tbody tr td {padding:2% 1%; vertical-align:bottom;}
+.popupLayer .listMessageTarget table tbody tr td * {display:block; width:100%;}
+.popupLayer .listMessageTarget table tbody tr td .btn {height:35px; line-height:35px; background:#2962a0; color:#fff; font-weight:700;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li {width:100%; padding:.25em 0;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li:first-child {padding-top:2em;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li:after {content:''; display:block; clear:both;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li * {float:left}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li span {width:20px; line-height:35px;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li input {width:calc(100% - 43px); font-size:15px; background:#fff; border-radius:2px; border-color:#d5d5d5;}
+.popupLayer .listMessageTarget fieldset:nth-of-type(2) ul li .btn {width:35px; height:35px; margin-left:8px; background:#fff url("../images/common/btn_delpush.png") no-repeat 50% / 27px; border:1px solid #aaa; border-radius:2px;}
+.popupLayer .listMessageWrite table {border-top:1px solid #aacadb;}
+.popupLayer .listMessageWrite table tbody th {background:#f7f7f7; color:#666; border-bottom:1px solid #e1e1e1; vertical-align:middle; font-weight:400;}
+.popupLayer .listMessageWrite table tbody td {padding:.5em; border-bottom:1px solid #e1e1e1;}
+.popupLayer .listMessageWrite table tbody td * {width:100%;}
+.popupLayer .listMessageWrite table tbody td textarea {height:248px}
+.popupLayer .listMessageWrite table tbody td [readonly] {font-weight:400}
+
+/* 공지등록 */
+.NoticeWriteForm {width:640px}
+.NoticeWriteForm table {width:100%}
+.NoticeWriteForm tbody tr th {width:25%; padding:10px 0; line-height:35px; color:#666; background:#f7f7f7; border-bottom:1px solid #e1e1e1; vertical-align:middle; font-weight:400;}
+.NoticeWriteForm tbody tr td {width:75%; padding:10px; border-bottom:1px solid #e1e1e1}
+.NoticeWriteForm tbody tr:first-child th ,
+.NoticeWriteForm tbody tr:first-child td {border-top:1px solid #aacadb}
+.NoticeWriteForm tbody tr:last-child th ,
+.NoticeWriteForm tbody tr:last-child td {border-bottom:1px solid #aacadb}
+.NoticeWriteForm tbody tr td #writerNotice {font-weight:400}
+.NoticeWriteForm tbody tr td .full {width:100%}
+.NoticeWriteForm tbody tr td .long {width:16em}
+
+
+
