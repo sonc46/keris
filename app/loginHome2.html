@@ -1,73 +1,122 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>학생 건강상태 자가진단</title>
-	<link rel="stylesheet" href="resources/css_20200918/common.css">
+	<link rel="stylesheet" href="resources/css_20200918/common_20200929.css">
 	<!--[if lte IE 9]>
 	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
 	<![endif]-->
-	<script src="resources/js/prefixfree.min.js"></script>
 	<script src="resources/js/placeholders.min.js"></script>
 	<script src="resources/js/classList.min.js"></script>
-	<script src="resources/js/common.js"></script>
-	<style>
-		.welcome_groupLink li {
-			float: left;
-			width: 31.33333333%;
-			margin: 0 1%;
+	<script>
+		window.onload = function () {
+			var loginHome_typeInp = document.getElementsByClassName('loginHome_typeInp');
+			var loginHome_type = document.getElementsByClassName('loginHome_type')[0].children;
+
+			[].forEach.call(loginHome_typeInp, function (inp) {
+				inp.addEventListener('click', function () {
+					[].forEach.call(loginHome_type, function (el) {
+						el.children[0].classList.remove("active");
+					});
+					inp.parentNode.classList.add('active');
+				})
+			});
 		}
-		.welcome_groupLink li a {
-			display: block;
-			width: 100%;
-			height: 100%;
-			padding: 5.5em 0 .75em;
-			color: #333;
-			font-size: .938em;
-			font-weight: 600;
-			background: #fff;
-			border-radius: .5em;
-		}
-		.welcome_groupLink li a span::after {
-			content: '';
-			display: inline-block;
-			width: 1em;
-			height: 1em;
-			margin: 0 0 .125em .25em;
-			vertical-align: middle;
-			background: #999;
-		}
-	</style>
+	</script>
 </head>
+
 <body>
 	<div class="secondary_pw">
 		<div class="group">
 			<h1>
-				<em><span class="skip">교육부</span></em>
+				<em>
+					<span class="skip">교육부</span>
+				</em>
 			</h1>
-			<strong class="title">건강상태 자가진단
-				<span class="language_contents mb1">Health Condition Self-Check.</span>
+			<strong class="title">
+				건강상태 자가진단
+				<span class="language_contents mb1">Health Condition Self-Check</span>
 			</strong>
-			<ul class="welcome_groupLink">
-				<li>
-					<a class="btn_group1" href="#">
-						<span>유&middot;초&middot;중&middot;고<br />참여하기</span>
-					</a>
+
+			<ul class="loginHome_type">
+				<li class="">
+					<label for="loginHome_typeCheck1" class="loginHome_typeCheck type1 active"
+						@click="goLogin('school')">
+						<span></span>
+						유&middot;초&middot;중&middot;고
+						<input type="radio" id="loginHome_typeCheck1" class="loginHome_typeInp"
+							name="loginHome_typeCheck" title="유초중고 참여하기" checked />
+					</label>
 				</li>
 				<li>
-					<a class="btn_group2" href="#">
-						<span>대학<br />참여하기</span>
-					</a>
+					<label for="loginHome_typeCheck2" class="loginHome_typeCheck type2" @click="goLogin('univ')">
+						<span></span>
+						대학
+						<input type="radio" id="loginHome_typeCheck2" class="loginHome_typeInp"
+							name="loginHome_typeCheck" title="대학 참여하기" />
+					</label>
 				</li>
 				<li>
-					<a class="btn_group2" href="#">
-						<span>기관<br />참여하기</span>
-					</a>
+					<label for="loginHome_typeCheck3" class="loginHome_typeCheck type3" @click="goLogin('office')">
+						<span></span>
+						교육행정기관
+						<input type="radio" id="loginHome_typeCheck3" class="loginHome_typeInp"
+							name="loginHome_typeCheck" title="교육행정기관 참여하기" />
+					</label>
 				</li>
 			</ul>
+			<button type="button" id="btnConfirm2" @click="goLogin('school')" title="자가진단 참여하기">
+				자가진단 참여하기
+			</button>
+
+
+			<!-- 20200929 : 
+			.welcome_appLink 안에 있는 span.br 들어가는 요소를 삭제하였습니다. -->
+			<ul class="welcome_appLink type2" v-if="!isMobile && isMobileAgent">
+				<li>
+					<a class="btn_appDown" :href="
+				  isAppleMachine
+					? 'https://apple.co/2YVHGNO'
+					: 'https://play.google.com/store/apps/details?id=kr.go.eduro.hcs'
+				">
+						자가진단 앱설치
+					</a>
+				</li>
+				<li>
+					<a v-if="!isMobile" class="btn_appVideo" target="_blank"
+						href="http://rl6cz18qh.toastcdn.net/eduro/manual_public_20200904001.mp4">
+						참여방법 동영상
+					</a>
+					<!-- <a v-if="isMobile" class="btn_appVideo" target="_blank" href="javascript:;"
+						@click="playMovieOnMobile()">
+						참여방법 동영상
+					</a> -->
+				</li>
+			</ul>
+
+
+			<!-- 20200929 : 
+			.welcome_appLink 안에 있는 span.br 들어가는 요소를 삭제하였습니다.
+			.welcome_appLink.type1 태그에 스타일 적용되어 있는 부분 삭제하였습니다. -->
+			<!-- <ul class="welcome_appLink type1" v-else>
+				<li>
+					<a v-if="!isMobile" class="btn_appVideo" target="_blank"
+						href="http://rl6cz18qh.toastcdn.net/eduro/manual_public_20200904001.mp4">
+						참여방법 동영상
+					</a>
+					<a v-if="isMobile" class="btn_appVideo" target="_blank" href="javascript:;"
+						@click="playMovieOnMobile()">
+						참여방법 동영상
+					</a>
+				</li>
+			</ul> -->
 		</div>
-		<cite>COPYRIGHT 2020. 교육부.All rights reserved.</cite>
+
+		<cite>COPYRIGHT 2020 교육부. All rights reserved.</cite>
 	</div>
 </body>
+
 </html>
