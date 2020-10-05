@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 	<script src="resources/js/placeholders.min.js"></script>
 	<script src="resources/js/classList.min.js"></script>
 </head>
+
 <body>
 	<header id="header">
 		<div class="h-nav">
@@ -22,13 +24,13 @@
 				</h1>
 				<a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
 				<ul id="topMenuWrap">
-					<li><a class="topmenu01" href="main.html">자가진단</a></li>
-					<li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
-					<li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
-					<li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
-					<li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
-					<li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
-					<li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+					<li><a class="topmenu topmenu01" data-href="main.html">자가진단</a></li>
+					<li><a class="topmenu topmenu02" data-href="알림목록.html">알림조회</a></li>
+					<li><a class="topmenu topmenu03" data-href="공지사항목록.html">공지사항</a></li>
+					<li><a class="topmenu topmenu04" data-href="동선관리목록.html">동선관리</a></li>
+					<li><a class="topmenu topmenu05" data-href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+					<li><a class="topmenu topmenu06" data-href="앱설정.html">앱설정</a></li>
+					<li><a class="topmenu topmenu07" data-href="loginHome.html">로그아웃</a></li>
 				</ul>
 				<div id="topMenuShadow"></div>
 				<div class="title_bar">
@@ -61,8 +63,10 @@
 
 				<div class="guid_explanation">
 					<ul>
-						<li><span>현재 대상자의 건강 상태는 가정 내에서 보호가 필요한 상황이 므로 <em>우리 아이들의 건강한 학교생활을 위해 잠시 등교하지 않도록 협조하여 주시기 바랍니다.</em></span></li>
-						<li>학생의 경우 등교하지 않아도 학교에서는 출석으로 인정합니다. 학생의 발열, 호흡기 증상 등 코로나19가 의심되는 증상이 있는 경우 해당 콜센터 (&#9742;1399) 또는 학교에 상담하고 선별 진료소 방문 후 진료 &middot; 검사받기 등 안내에 따라 주시기 바랍니다.</li>
+						<li><span>현재 대상자의 건강 상태는 가정 내에서 보호가 필요한 상황이 므로 <em>우리 아이들의 건강한 학교생활을 위해 잠시 등교하지 않도록 협조하여 주시기
+									바랍니다.</em></span></li>
+						<li>학생의 경우 등교하지 않아도 학교에서는 출석으로 인정합니다. 학생의 발열, 호흡기 증상 등 코로나19가 의심되는 증상이 있는 경우 해당 콜센터
+							(&#9742;1399) 또는 학교에 상담하고 선별 진료소 방문 후 진료 &middot; 검사받기 등 안내에 따라 주시기 바랍니다.</li>
 					</ul>
 				</div>
 			</div>
@@ -70,4 +74,5 @@
 	</div>
 	<script src="resources/js/common.js"></script>
 </body>
+
 </html>

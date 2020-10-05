@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,11 @@
 	<!--[if lte IE 9]>
 	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
 	<![endif]-->
-	<script src="resources/js/prefixfree.min.js"></script>
 	<script src="resources/js/placeholders.min.js"></script>
 	<script src="resources/js/classList.min.js"></script>
 	<script src="resources/js/common.js"></script>
 </head>
+
 <body>
 	<header id="header">
 		<div class="h-nav">
@@ -23,13 +24,13 @@
 				</h1>
 				<a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
 				<ul id="topMenuWrap">
-					<li><a class="topmenu01" href="main.html">자가진단</a></li>
-					<li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
-					<li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
-					<li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
-					<li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
-					<li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
-					<li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+					<li><a class="topmenu topmenu01" data-href="main.html">자가진단</a></li>
+					<li><a class="topmenu topmenu02" data-href="알림목록.html">알림조회</a></li>
+					<li><a class="topmenu topmenu03" data-href="공지사항목록.html">공지사항</a></li>
+					<li><a class="topmenu topmenu04" data-href="동선관리목록.html">동선관리</a></li>
+					<li><a class="topmenu topmenu05" data-href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+					<li><a class="topmenu topmenu06" data-href="앱설정.html">앱설정</a></li>
+					<li><a class="topmenu topmenu07" data-href="loginHome.html">로그아웃</a></li>
 				</ul>
 				<div id="topMenuShadow"></div>
 				<div class="title_bar">
@@ -52,7 +53,8 @@
 	</header>
 	<div id="container">
 		<section class="serviceWrap">
-			<ul class="type1"><!-- type1, type2, type3 -->
+			<ul class="type1">
+				<!-- type1, type2, type3 -->
 				<li><a href="loginWithUserInfo.html" class="service01">참여자등록</a></li>
 				<!-- <li><a href="#" class="service02">알림조회</a></li> -->
 				<!-- <li><a href="#" class="service03">공지사항</a></li> -->
@@ -107,4 +109,5 @@
 		<cite>COPYRIGHT&copy; 교육부.All rights reserved.</cite>
 	</footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
 	<script src="resources/js/placeholders.min.js"></script>
 	<script src="resources/js/classList.min.js"></script>
 </head>
+
 <body>
 	<header id="header">
 		<div class="h-nav">
@@ -22,13 +24,13 @@
 				</h1>
 				<a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
 				<ul id="topMenuWrap">
-					<li><a class="topmenu01" href="main.html">자가진단</a></li>
-					<li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
-					<li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
-					<li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
-					<li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
-					<li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
-					<li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+					<li><a class="topmenu topmenu01" data-href="main.html">자가진단</a></li>
+					<li><a class="topmenu topmenu02" data-href="알림목록.html">알림조회</a></li>
+					<li><a class="topmenu topmenu03" data-href="공지사항목록.html">공지사항</a></li>
+					<li><a class="topmenu topmenu04" data-href="동선관리목록.html">동선관리</a></li>
+					<li><a class="topmenu topmenu05" data-href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+					<li><a class="topmenu topmenu06" data-href="앱설정.html">앱설정</a></li>
+					<li><a class="topmenu topmenu07" data-href="loginHome.html">로그아웃</a></li>
 				</ul>
 				<div id="topMenuShadow"></div>
 				<div class="title_bar">
@@ -53,7 +55,8 @@
 		<div class="subpage">
 			<div class="contents">
 				<div class="translationSelection">
-					<a href="javascript:;" onclick="selectionEvent()" id="translationSelectionBtn">국문(한글) <span>Language</span></a>
+					<a href="javascript:;" onclick="selectionEvent()" id="translationSelectionBtn">국문(한글)
+						<span>Language</span></a>
 					<ul>
 						<li><a href="#" class="translationSelectionA">국문(한글)</a></li>
 						<li><a href="#" class="translationSelectionB">English</a></li>
@@ -72,53 +75,77 @@
 
 				<div class="survey_question">
 					<dl>
-						<dt>1. <span>학생의</span> 몸에 열이 있나요? <span>(해당사항 선택)</span> <br>단, 기저질환 등으로 코로나19와 관계없이 평소에 발열 증상이 계속되는 경우는 제외</dt>
+						<dt>1. <span>학생의</span> 몸에 열이 있나요? <span>(해당사항 선택)</span> <br>단, 기저질환 등으로 코로나19와 관계없이 평소에 발열 증상이
+							계속되는 경우는 제외</dt>
 						<dd>
-							<ul class="radioList"><!-- 클레스 추가 해주세요 -->
-								<li><input type="radio" id="survey_q1a1" name="survey_q1" value=""><label for="survey_q1a1">37.5℃ 미만</label></li>
-								<li><input type="radio" id="survey_q1a2" name="survey_q1" value=""><label for="survey_q1a2">37.5℃ 이상 및 발열감</label></li>
+							<ul class="radioList">
+								<!-- 클레스 추가 해주세요 -->
+								<li><input type="radio" id="survey_q1a1" name="survey_q1" value=""><label
+										for="survey_q1a1">37.5℃ 미만</label></li>
+								<li><input type="radio" id="survey_q1a2" name="survey_q1" value=""><label
+										for="survey_q1a2">37.5℃ 이상 및 발열감</label></li>
 							</ul>
 						</dd>
 					</dl>
 					<dl>
-						<dt>2. <span>학생에게</span> 코로나19가 의심되는 증상이 있나요 ? <span>(해당사항 모두 선택)</span> <br>단, 기저질환 등으로 코로나19와 관계없이 평소에 다음 증상이 계속되는 경우는 제외</dt>
+						<dt>2. <span>학생에게</span> 코로나19가 의심되는 증상이 있나요 ? <span>(해당사항 모두 선택)</span> <br>단, 기저질환 등으로 코로나19와
+							관계없이 평소에 다음 증상이 계속되는 경우는 제외</dt>
 						<dd>
-							<ul class="checkList"><!-- 클레스 추가 해주세요 -->
-								<li><input type="checkbox" id="survey_q2a1" name="survey_q2" value=""><label for="survey_q2a1">아니오</label></li>
-								<li><input type="checkbox" id="survey_q2a2" name="survey_q2" value=""><label for="survey_q2a2">기침</label></li>
-								<li><input type="checkbox" id="survey_q2a3" name="survey_q2" value=""><label for="survey_q2a3">호흡곤란</label></li>
-								<li><input type="checkbox" id="survey_q2a4" name="survey_q2" value=""><label for="survey_q2a4">오한</label></li>
-								<li><input type="checkbox" id="survey_q2a5" name="survey_q2" value=""><label for="survey_q2a5">근육통</label></li>
-								<li><input type="checkbox" id="survey_q2a6" name="survey_q2" value=""><label for="survey_q2a6">두통</label></li>
-								<li><input type="checkbox" id="survey_q2a7" name="survey_q2" value=""><label for="survey_q2a7">인후통</label></li>
-								<li><input type="checkbox" id="survey_q2a8" name="survey_q2" value=""><label for="survey_q2a8">후각&middot;미각 소실</label></li>
+							<ul class="checkList">
+								<!-- 클레스 추가 해주세요 -->
+								<li><input type="checkbox" id="survey_q2a1" name="survey_q2" value=""><label
+										for="survey_q2a1">아니오</label></li>
+								<li><input type="checkbox" id="survey_q2a2" name="survey_q2" value=""><label
+										for="survey_q2a2">기침</label></li>
+								<li><input type="checkbox" id="survey_q2a3" name="survey_q2" value=""><label
+										for="survey_q2a3">호흡곤란</label></li>
+								<li><input type="checkbox" id="survey_q2a4" name="survey_q2" value=""><label
+										for="survey_q2a4">오한</label></li>
+								<li><input type="checkbox" id="survey_q2a5" name="survey_q2" value=""><label
+										for="survey_q2a5">근육통</label></li>
+								<li><input type="checkbox" id="survey_q2a6" name="survey_q2" value=""><label
+										for="survey_q2a6">두통</label></li>
+								<li><input type="checkbox" id="survey_q2a7" name="survey_q2" value=""><label
+										for="survey_q2a7">인후통</label></li>
+								<li><input type="checkbox" id="survey_q2a8" name="survey_q2" value=""><label
+										for="survey_q2a8">후각&middot;미각 소실</label></li>
 							</ul>
 						</dd>
 					</dl>
 					<dl>
 						<dt>3. <span>학생이</span> 최근(14일 이내) <span>해외여행을</span> 다녀온 사실이 있나요?</dt>
 						<dd>
-							<ul class="radioList"><!-- 클레스 추가 해주세요 -->
-								<li><input type="radio" id="survey_q3a1" name="survey_q3" value=""><label for="survey_q3a1">아니오</label></li>
-								<li><input type="radio" id="survey_q3a2" name="survey_q3" value=""><label for="survey_q3a2">예</label></li>
+							<ul class="radioList">
+								<!-- 클레스 추가 해주세요 -->
+								<li><input type="radio" id="survey_q3a1" name="survey_q3" value=""><label
+										for="survey_q3a1">아니오</label></li>
+								<li><input type="radio" id="survey_q3a2" name="survey_q3" value=""><label
+										for="survey_q3a2">예</label></li>
 							</ul>
 						</dd>
 					</dl>
 					<dl>
-						<dt>4. <span>동거가족 중</span> 최근(14일 이내) <span>해외여행을</span> 다녀온 사실이 있나요? (단, 국제선 항공기 및 선박 승무원 등 직업특성상 매번 해외 입출국하고 의심증상이 없는 경우는 제외)</dt>
+						<dt>4. <span>동거가족 중</span> 최근(14일 이내) <span>해외여행을</span> 다녀온 사실이 있나요? (단, 국제선 항공기 및 선박 승무원 등
+							직업특성상 매번 해외 입출국하고 의심증상이 없는 경우는 제외)</dt>
 						<dd>
-							<ul class="radioList"><!-- 클레스 추가 해주세요 -->
-								<li><input type="radio" id="survey_q4a1" name="survey_q4" value=""><label for="survey_q4a1">아니오</label></li>
-								<li><input type="radio" id="survey_q4a2" name="survey_q4" value=""><label for="survey_q4a2">예</label></li>
+							<ul class="radioList">
+								<!-- 클레스 추가 해주세요 -->
+								<li><input type="radio" id="survey_q4a1" name="survey_q4" value=""><label
+										for="survey_q4a1">아니오</label></li>
+								<li><input type="radio" id="survey_q4a2" name="survey_q4" value=""><label
+										for="survey_q4a2">예</label></li>
 							</ul>
 						</dd>
 					</dl>
 					<dl>
 						<dt>5. <span>동거가족 중</span> 현재 자가격리 중 인 가족이 있나요?</dt>
 						<dd>
-							<ul class="radioList"><!-- 클레스 추가 해주세요 -->
-								<li><input type="radio" id="survey_q5a1" name="survey_q5" value=""><label for="survey_q5a1">아니오</label></li>
-								<li><input type="radio" id="survey_q5a2" name="survey_q5" value=""><label for="survey_q5a2">예</label></li>
+							<ul class="radioList">
+								<!-- 클레스 추가 해주세요 -->
+								<li><input type="radio" id="survey_q5a1" name="survey_q5" value=""><label
+										for="survey_q5a1">아니오</label></li>
+								<li><input type="radio" id="survey_q5a2" name="survey_q5" value=""><label
+										for="survey_q5a2">예</label></li>
 							</ul>
 						</dd>
 					</dl>
@@ -129,4 +156,5 @@
 	</div>
 	<script src="resources/js/common.js"></script>
 </body>
+
 </html>
