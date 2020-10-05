@@ -1008,21 +1008,39 @@ img {
   font-weight: 600;
   position: relative;
 }
-.loginHome_type .loginHome_typeCheck {
+.loginHome_type li .icheckbox {
+  position: relative;
+  cursor: pointer;
+}
+.loginHome_type li input {
+  /* 20201005*/
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+  display: block;
+  margin: .25em auto 0;
+  -moz-appearance: auto;
+  -webkit-appearance: auto;
+          appearance: auto;
+}
+.loginHome_type li .loginHome_typeCheck {
+  /* 20201005*/
   display: block;
   width: 100%;
-  padding: .5em 0 .5em;
+  padding: .5em 0;
   font-weight: 600;
+  background: #4497c3;
   border: 1px solid #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.loginHome_type .loginHome_typeCheck.active {
+.loginHome_type li .icheckbox.checked .loginHome_typeCheck {
   position: relative;
   background-color: #fff;
   color: #1260a8;
 }
-.loginHome_type .loginHome_typeCheck.active::after {
+.loginHome_type li .icheckbox.checked .loginHome_typeCheck::after {
   content: '';
   display: block;
   border: 7px solid transparent;
@@ -1032,47 +1050,40 @@ img {
   left: 50%;
   margin: 0 0 -16px -7px
 }
-.loginHome_type .loginHome_typeCheck.type1 {
+.loginHome_type li .loginHome_typeCheck.type1 {
   border-radius: 8px 0 0 8px;
 }
-.loginHome_type .loginHome_typeCheck.type2 {
+.loginHome_type li .loginHome_typeCheck.type2 {
   border-left: 0;
 }
-.loginHome_type .loginHome_typeCheck.type3 {
+.loginHome_type li .loginHome_typeCheck.type3 {
   border-left: 0;
   border-radius: 0 8px 8px 0;
 }
-.loginHome_type .loginHome_typeCheck span {
+.loginHome_type li .loginHome_typeCheck span {
   display: block;
   width: 3em;
   height: 3em;
   margin: 0 auto .125em;
   background: no-repeat 50% / cover;
 }
-.loginHome_type .loginHome_typeCheck.type1 span {
+.loginHome_type li .loginHome_typeCheck.type1 span {
   background-image: url("../images/common/loginhome_group_school.png");
 }
-.loginHome_type .loginHome_typeCheck.type2 span {
+.loginHome_type li .loginHome_typeCheck.type2 span {
   background-image: url("../images/common/loginhome_group_university.png");
 }
-.loginHome_type .loginHome_typeCheck.type3 span {
+.loginHome_type li .loginHome_typeCheck.type3 span {
   background-image: url("../images/common/loginhome_group_institute.png");
 }
-.loginHome_type .loginHome_typeCheck.type1.active span {
+.loginHome_type li .icheckbox.checked .loginHome_typeCheck.type1 span {
   background-image: url("../images/common/loginhome_group_school_on.png");
 }
-.loginHome_type .loginHome_typeCheck.type2.active span {
+.loginHome_type li .icheckbox.checked .loginHome_typeCheck.type2 span {
   background-image: url("../images/common/loginhome_group_university_on.png");
 }
-.loginHome_type .loginHome_typeCheck.type3.active span {
+.loginHome_type li .icheckbox.checked .loginHome_typeCheck.type3 span {
   background-image: url("../images/common/loginhome_group_institute_on.png");
-}
-.loginHome_type li input {
-  display: block;
-  margin: .25em auto 0;
-  -moz-appearance: auto;
-  -webkit-appearance: auto;
-          appearance: auto;
 }
 
 @media screen and (max-width: 360px){
