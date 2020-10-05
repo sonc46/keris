@@ -20,10 +20,8 @@
 			[].forEach.call(loginHome_typeInp, function (inp) {
 				inp.addEventListener('click', function () {
 					[].forEach.call(loginHome_type, function (el) {
-						el.children[0].setAttribute('aria-checked', 'false');
 						el.children[0].classList.remove("checked");
 					});
-					inp.parentNode.setAttribute('aria-checked', 'true');
 					inp.parentNode.classList.add('checked');
 				});
 			});
@@ -56,7 +54,7 @@
 			<ul class="loginHome_type">
 				<li class="">
 					<!-- 20201005 수정 -->
-					<div class="icheckbox checked" aria-checked="true">
+					<div class="icheckbox checked">
 						<input type="radio" id="loginHome_typeCheck1" class="loginHome_typeInp"
 							name="loginHome_typeCheck" title="유초중고 참여하기" tabindex="-1" checked />
 						<label for="loginHome_typeCheck1" class="loginHome_typeCheck type1" @click="goLogin('school')"
@@ -67,7 +65,7 @@
 					</div>
 				</li>
 				<li>
-					<div class="icheckbox" aria-checked="false">
+					<div class="icheckbox">
 						<input type="radio" id="loginHome_typeCheck2" class="loginHome_typeInp"
 							name="loginHome_typeCheck" title="대학 참여하기" tabindex="-1" />
 						<label for="loginHome_typeCheck2" class="loginHome_typeCheck type2" @click="goLogin('univ')"
@@ -78,7 +76,7 @@
 					</div>
 				</li>
 				<li>
-					<div class="icheckbox" aria-checked="false">
+					<div class="icheckbox">
 						<input type="radio" id="loginHome_typeCheck3" class="loginHome_typeInp"
 							name="loginHome_typeCheck" title="교육행정기관 참여하기" tabindex="-1" />
 						<label for="loginHome_typeCheck3" class="loginHome_typeCheck type3" @click="goLogin('office')"
