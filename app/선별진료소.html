@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 건강상태 자가진단</title>
+    <link rel="stylesheet" href="resources/css/common.css">
+    <!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+    <script src="resources/js/prefixfree.min.js"></script>
+    <script src="resources/js/placeholders.min.js"></script>
+    <script src="resources/js/classList.min.js"></script>
+    <script src="resources/js/common.js"></script>
+    <style>
+        #medical_section .group1 {
+            padding: 1.5em 4%;
+            font-size: .875em;
+            color: #555;
+        }
+
+        #medical_section .group2 {
+            padding: 0 4%;
+        }
+
+        #medical_section .group2 ul li {
+            float: left;
+            width: 49.5%;
+            text-align: center;
+        }
+
+        #medical_section .group2 ul li:nth-child(n+2) {
+            margin-left: 1%;
+        }
+
+        #medical_section .group2 ul li a {
+            display: block;
+            padding: .625em 0;
+            font-weight: 600;
+            color: #fff;
+            background: #999;
+            border-radius: .375em .375em 0 0;
+        }
+
+        #medical_section .group2 ul li a.active {
+            background: #007eda;
+        }
+
+        #medical_section .group2 ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #medical_section .group3 .part1 {
+            padding: .5em 4%;
+            background: #f3f3f3;
+            border: 1px solid #dfdfdf;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #medical_section .group3 .part1 .unit1 {
+            border: 1px solid #999;
+            background: #fff;
+            border-radius: .25em;
+            overflow: hidden;
+        }
+
+        #medical_section .group3 .part1 .unit1 .searchArea {
+            float: left;
+            height: 2.5em;
+            width: -webkit-calc(100% - 3em);
+            width: expression(100% - 3em);
+            width: -moz-calc(100% - 3em);
+            width: -o-calc(100% - 3em);
+            width: calc(100% - 3em);
+            padding: 0 .5em;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #medical_section .group3 .part1 .unit1 .sesarchBtn {
+            float: left;
+            width: 3em;
+            height: 2.5em;
+            background: url("resources/images/common/ico_medical_search.svg") no-repeat 50%/1.5em;
+        }
+
+        #medical_section .group3 .part1 .unit1::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #medical_section .group3 .part2 .unit::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: .5em;
+            background: #f4f4f4;
+            border-top: 1px solid #dfdfdf;
+            border-bottom: 1px solid #dfdfdf;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner {
+            position: relative;
+            padding: 1.125em 25% 1.125em 4%;
+            color: #666;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner strong {
+            display: block;
+            margin: 0 0 .25em;
+            font-size: 1.25em;
+            font-weight: 600;
+            color: #555;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner p span {
+            color: #ccc;
+            margin: 0 .25em;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul {
+            padding: .25em 0 0;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul li {
+            float: left;
+            margin-right: .75em;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul li em {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.5em;
+            height: 1.5em;
+            margin: 0 .25em .125em 0;
+            background: #eee;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul li em.time1 {
+            background: url('resources/images/common/ico_medical_weekday.svg') no-repeat 50%/100%;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul li em.time2 {
+            background: url('resources/images/common/ico_medical_friday.svg') no-repeat 50%/100%;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul li em.time3 {
+            background: url('resources/images/common/ico_medical_sunday.svg') no-repeat 50%/100%;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner .medical_telBtn {
+            position: absolute;
+            top: 1em;
+            right: 4%;
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            background: #f9f9f9 url('resources/images/common/ico_medical_tel.svg') no-repeat 51%/55%;
+            border: 1px solid #ccc;
+            border-radius: 100%;
+        }
+
+        #medical_section .group3 .part2 .unit .unit_inner .medical_mapBtn {
+            position: absolute;
+            top: 4em;
+            right: 4%;
+            display: block;
+            width: 2.5em;
+            height: 2.5em;
+            background: #f9f9f9 url('resources/images/common/ico_medical_map.svg') no-repeat 50%/65%;
+            border: 1px solid #ccc;
+            border-radius: 100%;
+        }
+
+        @media screen and (max-width: 360px) {
+            #medical_section .group3 .part2 .unit .unit_inner ul {
+                font-size: .875em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="h-nav">
+            <div class="h-fix">
+                <h1>
+                    <em><span class="skip">교육부</span></em>
+                </h1>
+                <a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
+                <ul id="topMenuWrap">
+                    <li><a class="topmenu01" href="main.html">자가진단</a></li>
+                    <li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
+                    <li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
+                    <li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
+                    <li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+                    <li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
+                    <li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+                </ul>
+                <div id="topMenuShadow"></div>
+                <div class="title_bar">
+                    <h2><strong>진료안내</strong></h2>
+                    <ul>
+                        <li><a href="main.html">처음으로</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <div id="medical_section">
+            <form action="">
+                <div class="group1">
+                    <p>호흡기 증상이나 코로나19 증상이 의심되는 경우 해당 지역의 선별진료소 및 안심병원을 이용하시기 바랍니다.</p>
+                </div>
+                <div class="group2">
+                    <ul>
+                        <li><a href="#" class="active">선별진료소</a></li>
+                        <li><a href="#">안심병원</a></li>
+                    </ul>
+                </div>
+                <div class="group3">
+                    <div class="part1">
+                        <div class="unit1">
+                            <input type="text" class="searchArea" title="검색어 입력" placeholder="검색어를 입력하세요">
+                            <button type="submit" class="sesarchBtn"><span class="skip">검색하기</span></button>
+                        </div>
+                    </div>
+                    <div class="part2">
+                        <div class="unit">
+                            <div class="unit_inner">
+                                <strong>강남구보건소</strong>
+                                <p>02-3433-5555<span>/</span>서울 강남구</p>
+                                <ul>
+                                    <li><em class="time1"></em>09:00~20:00</li>
+                                    <li><em class="time2"></em>09:00~19:00</li>
+                                    <li><em class="time3"></em>09:00~19:00</li>
+                                </ul>
+                                <a class="medical_telBtn" href="tel:02-3433-5555"><span class="skip">전화걸기</span></a>
+                                <a class="medical_mapBtn" href="#"><span class="skip">지도보기</span></a>
+                            </div>
+                        </div>
+                        <div class="unit">
+                            <div class="unit_inner">
+                                <strong>강남세브란스병원</strong>
+                                <p>02-1599-6114<span>/</span>서울 강남구</p>
+                                <ul>
+                                    <li><em class="time1"></em>09:00~20:00</li>
+                                    <li><em class="time2"></em>09:00~19:00</li>
+                                    <li><em class="time3"></em>미운영</li>
+                                </ul>
+                                <a class="medical_telBtn" href="tel:02-1599-6114"><span class="skip">전화걸기</span></a>
+                                <a class="medical_mapBtn" href="#"><span class="skip">지도보기</span></a>
+                            </div>
+                        </div>
+                        <div class="unit">
+                            <div class="unit_inner">
+                                <strong>이화여자대학교 서울병원</strong>
+                                <p>1522-7000<span>/</span>서울 강서구</p>
+                                <ul>
+                                    <li><em class="time1"></em>09:00~20:00</li>
+                                    <li><em class="time2"></em>미운영</li>
+                                    <li><em class="time3"></em>미운영</li>
+                                </ul>
+                                <a class="medical_telBtn" href="tel:1522-7000"><span class="skip">전화걸기</span></a>
+                                <a class="medical_mapBtn" href="#"><span class="skip">지도보기</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

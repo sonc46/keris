@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 건강상태 자가진단</title>
+    <link rel="stylesheet" href="resources/css/common.css">
+    <!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+    <script src="resources/js/prefixfree.min.js"></script>
+    <script src="resources/js/placeholders.min.js"></script>
+    <script src="resources/js/classList.min.js"></script>
+    <script src="resources/js/common.js"></script>
+    <style>
+        #alarm_section .group1 {
+            padding: 1.5em 4%;
+            border-bottom: 1px solid #cfdce8;
+            font-size: .875em;
+            color: #555;
+        }
+
+        #alarm_section .group2 {
+            padding: .875em 4%;
+            font-size: .8em;
+            font-weight: 600;
+            color: #026cb9;
+        }
+
+        #alarm_section .group2 .part1 {
+            float: left;
+        }
+
+        #alarm_section .group2 .part1 span {
+            font-weight: 400;
+            color: #666;
+        }
+
+        #alarm_section .group2 .part2 {
+            float: right;
+        }
+
+        #alarm_section .group2::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #alarm_section .group2 .part input {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.75em;
+            height: 1.75em;
+            margin: 0 0 .25em;
+            background: #b5b5b5;
+            border-radius: .25em;
+        }
+
+        #alarm_section .group2 .part input:checked {
+            background: #2b7db8 url('resources/images/common/ico_alarm_check.svg') no-repeat 50%/60%;
+        }
+
+        #alarm_section .group3 {
+            padding: 1em 4%;
+            background: #e8f3fc;
+            border: 1px solid #cfdce8;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #alarm_section .group3 .part1 {
+            margin-bottom: 1em;
+        }
+
+        #alarm_section .group3 .part1 ul li {
+            float: left;
+            width: 12.28571428571429%;
+            margin: 0 1%;
+            text-align: center;
+        }
+
+        #alarm_section .group3 .part1 li {
+            position: relative;
+        }
+
+        #alarm_section .group3 .part1 li input {
+            display: block;
+            width: 16px;
+            height: 16px;
+            margin: 16px;
+        }
+
+        #alarm_section .group3 .part1 li label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            padding: .375em 0;
+            font-size: 1.125em;
+            font-weight: 600;
+            color: #666;
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: .25em;
+        }
+
+        #alarm_section .group3 li input:focus+label {
+            color: #007eda;
+            border-color: #007eda;
+        }
+
+        #alarm_section .group3 li input:checked+label {
+            color: #fff;
+            background: #007eda;
+            border-color: #007eda;
+        }
+
+        #alarm_section .group3 .part1 ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #alarm_section .group3 .part2 {
+            padding: .5em 0;
+            background: #fff;
+            border: 1px solid #b0cfe8;
+            border-radius: .5em;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #alarm_section .group3 .part2 .unit_wrap {
+            display: inline-block;
+            width: 17em;
+        }
+
+        #alarm_section .group3 .part2 .unit {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #alarm_section .group3 .part2 .unit1 {
+            width: 3.25em;
+            font-size: 1.375em;
+        }
+
+        #alarm_section .group3 .part2 .unit1 select {
+            width: 100%;
+            height: 1em;
+            line-height: 1em;
+            padding: 0;
+            margin: 0 .75em .25em 0;
+            color: #6289a6;
+            border: 0;
+            text-align: left;
+        }
+
+        #alarm_section .group3 .part2 .unit2,
+        #alarm_section .group3 .part2 .unit4 {
+            width: 3.25em;
+        }
+
+        #alarm_section .group3 .part2 .unit3 {
+            width: .5em;
+            height: 1.25em;
+            line-height: .875em;
+        }
+
+        #alarm_section .group3 .part2 .unit2 input,
+        #alarm_section .group3 .part2 .unit3,
+        #alarm_section .group3 .part2 .unit4 input {
+            font-size: 1.875em;
+            font-weight: 600;
+            color: #004895;
+        }
+
+        #alarm_section .group3 .part2 .unit2 input,
+        #alarm_section .group3 .part2 .unit4 input {
+            width: 100%;
+            height: 1.25em;
+            line-height: 1;
+            margin: 0 0 .25em;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 1px solid #0686c6;
+        }
+
+        #alarm_section .group3 .part2 .unit #alarm_confirm_btn {
+            display: block;
+            width: 2.25em;
+            height: 2.25em;
+            margin-left: .75em;
+            border-radius: 100%;
+            background: #1365a1 url('resources/images/common/ico_alarm_check.svg') no-repeat 50%/50%;
+        }
+
+
+
+
+
+
+
+
+
+
+        #alarm_section .group4 ul li {
+            display: table;
+            width: 100%;
+            border-bottom: 1px solid #eee;
+        }
+
+        #alarm_section .group4 ul {
+            padding: 0 4%;
+        }
+
+        #alarm_section .group4 ul li .unit {
+            display: table-cell;
+            vertical-align: middle;
+            padding: .375em 0;
+            text-align: center;
+        }
+
+        #alarm_section .group4 ul li .unit.day {
+            width: 30%;
+            font-size: 1.125em;
+            color: #797979;
+        }
+
+        #alarm_section .group4 ul li .unit.time {
+            width: 40%;
+            font-size: 1.5em;
+            color: #004895;
+        }
+
+        #alarm_section .group4 ul li .unit.time .unit_inner {
+            display: inline-block;
+        }
+
+        #alarm_section .group4 ul li .unit.btn {
+            width: 30%;
+        }
+
+        #alarm_section .group4 .select_alarm_time {
+            font-size: .75em;
+            color: #6289a6;
+        }
+
+        #alarm_section .group4 .select_alarm_btn {
+            width: 100%;
+            height: 2em;
+            margin: .5em 0 0;
+            font-weight: 700;
+            color: #026cb9;
+            background: transparent;
+            position: relative;
+        }
+
+        #alarm_section .group4 .select_alarm_btn::before {
+            content: '';
+            display: block;
+            width: 2.5em;
+            height: 1.25em;
+            padding: .125em .2em;
+            border-radius: .95em;
+            background: #b6c3cc;
+            border: .0625em solid #9aa8b2;
+            position: absolute;
+            top: 50%;
+            right: .5em;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        #alarm_section .group4 .select_alarm_btn::after {
+            content: '';
+            display: block;
+            width: 1.25em;
+            height: 1.25em;
+            border-radius: .625em;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            right: 2.05em;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        #alarm_section .group4 .select_alarm_btn[aria-checked=true]::before {
+            background: #fff;
+            border-color: #95c5e7;
+        }
+
+        #alarm_section .group4 .select_alarm_btn[aria-checked=true]::after {
+            background: #007eda;
+            right: 0.6875em;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="h-nav">
+            <div class="h-fix">
+                <h1>
+                    <em><span class="skip">교육부</span></em>
+                </h1>
+                <a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
+                <ul id="topMenuWrap">
+                    <li><a class="topmenu topmenu01" data-href="main.html">자가진단</a></li>
+                    <li><a class="topmenu topmenu02" data-href="알림목록.html">알림조회</a></li>
+                    <li><a class="topmenu topmenu03" data-href="공지사항목록.html">공지사항</a></li>
+                    <li><a class="topmenu topmenu04" data-href="동선관리목록.html">동선관리</a></li>
+                    <li><a class="topmenu topmenu05" data-href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+                    <li><a class="topmenu topmenu06" data-href="앱설정.html">앱설정</a></li>
+                    <li><a class="topmenu topmenu07" data-href="loginHome.html">로그아웃</a></li>
+                </ul>
+                <div id="topMenuShadow"></div>
+                <div class="title_bar">
+                    <h2><strong>건강상태 자가진단</strong></h2>
+                    <ul>
+                        <li><a href="main.html">처음으로</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <div id="alarm_section">
+            <form action="">
+                <div class="group1">
+                    <p>아래 알림 수신 시각을 설정하시면 해당 시각에 푸시메시지를 받아 자가진단 앱을 이용할 수 있습니다.</p>
+                </div>
+                <div class="group2">
+                    <div class="part part1">
+                        <input type="checkbox" id="alarmWeekDay" />
+                        <label for="day1">월~금 반복<span>(공휴일, 대체휴일 제외)</span></label>
+                    </div>
+                    <div class="part part2">
+                        <input type="checkbox" id="alarmWeekend" checked />
+                        <label for="">주말포함</label>
+                    </div>
+                </div>
+                <div class="group3">
+                    <div class="part1">
+                        <ul>
+                            <li>
+                                <input type="checkbox" id="alarmDay1" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay1">일</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay2" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay2">월</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay3" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay3">화</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay4" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay4">수</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay5" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay5">목</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay6" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay6">금</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="alarmDay7" class="alarm_day" name="alarmDay" />
+                                <label for="alarmDay7">토</label>
+                            </li>
+                        </ul>
+                        <!-- <ul>
+                            <li><button class="alarmDay">일</button></li>
+                            <li><button class="alarmDay active">월</button></li>
+                            <li><button class="alarmDay active">화</button></li>
+                            <li><button class="alarmDay active">수</button></li>
+                            <li><button class="alarmDay active">목</button></li>
+                            <li><button class="alarmDay active">금</button></li>
+                            <li><button class="alarmDay">토</button></li>
+                        </ul> -->
+                    </div>
+                    <div class="part2">
+                        <div class="unit_wrap">
+                            <div id="alarm_time" class="unit unit1">
+                                <select name="" id="" title="오전 오후 선택">
+                                    <option value="">오전</option>
+                                    <option value="">오후</option>
+                                </select>
+                            </div>
+                            <div class="unit unit2"><input type="number" id="alarm_clock" value="07" title="시간 시 선택">
+                            </div>
+                            <div class="unit unit3">:</div>
+                            <div class="unit unit4"><input type="number" id="alarm_minute" value="15" title="시간 분 선택">
+                            </div>
+                            <div class="unit unit5">
+                                <button id="alarm_confirm_btn"><span class="skip">알림 시간 선택 완료</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group4">
+                    <ul>
+                        <li>
+                            <div class="unit day">일요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn"></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">월요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn" aria-checked=true></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">화요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn" aria-checked=true></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">수요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn" aria-checked=true></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">목요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn" aria-checked=true></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">금요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn" aria-checked=true></button>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="unit day">토요일</div>
+                            <div class="unit time">
+                                <span class="select_alarm_time">오전</span>
+                                <span class="select_alarm_clock">07:15</span>
+                            </div>
+                            <div class="unit btn">
+                                <button class="select_alarm_btn"></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

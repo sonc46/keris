@@ -49,6 +49,3 @@ var topMenuEvent = function () {
 var selectionEvent = function () {
 	translationSelectionBtn.classList.toggle('active');
 };
-
-
-
