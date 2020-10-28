@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학생 건강상태 자가진단</title>
+    <link rel="stylesheet" href="resources/css/common.css">
+    <!--[if lte IE 9]>
+	<script src="http://ifakorea.co.kr/js/html5shiv.js"></script>
+	<![endif]-->
+    <script src="resources/js/prefixfree.min.js"></script>
+    <script src="resources/js/placeholders.min.js"></script>
+    <script src="resources/js/classList.min.js"></script>
+    <script src="resources/js/common.js"></script>
+    <style>
+        #covid19Area_section .group1 {
+            padding: 1.5em 4%;
+            font-size: .875em;
+            color: #555;
+        }
+
+        #covid19Area_section .group2 ul {
+            padding: 0 4%;
+        }
+
+        #covid19Area_section .group2 ul::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #covid19Area_section .group2 ul li {
+            float: left;
+            width: 25%;
+        }
+
+        #covid19Area_section .group2 ul li a {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 3em;
+            line-height: 1;
+            padding: 1em 2em 1em .875em;
+            color: #004895;
+            border: 1px solid #d1dee9;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+            overflow: hidden;
+        }
+
+        #covid19Area_section .group2 ul li a::before {
+            content: '';
+            position: absolute;
+            top: 1.125em;
+            right: 1em;
+            z-index: 2;
+            display: block;
+            width: .75em;
+            height: .75em;
+            border: 2px solid #007eda;
+            background: #fff;
+            box-sizing: border-box;
+        }
+
+        #covid19Area_section .group2 ul li a::after {
+            content: '';
+            position: absolute;
+            top: .9em;
+            right: .8em;
+            z-index: 1;
+            display: block;
+            width: .75em;
+            height: .75em;
+            border: 1px dotted #007eda;
+            box-sizing: border-box;
+        }
+
+        #covid19Area_section .group2 ul li a:hover {
+            background: #f4faff;
+        }
+
+        @media screen and (min-width: 768px) {
+            #covid19Area_section .group2 ul li a {
+                border-left-width: 0;
+            }
+
+            #covid19Area_section .group2 ul li:nth-child(4n+1) a {
+                border-left-width: 1px;
+            }
+
+            #covid19Area_section .group2 ul li:nth-child(n+5) a {
+                border-top-width: 0;
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            #covid19Area_section .group2 ul li a {
+                font-size: .937em;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            #covid19Area_section .group2 ul li {
+                width: 50%;
+            }
+
+            #covid19Area_section .group2 ul li a {
+                font-size: 1em;
+                font-weight: 600;
+            }
+
+            #covid19Area_section .group2 ul li:nth-child(2n) a {
+                border-left: 0;
+            }
+
+            #covid19Area_section .group2 ul li:nth-child(n+3) a {
+                border-top-width: 0;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            #covid19Area_section .group2 ul li a {
+                font-size: .937em;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            #covid19Area_section .group2 ul li a {
+                font-size: .875em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="h-nav">
+            <div class="h-fix">
+                <h1>
+                    <em><span class="skip">교육부</span></em>
+                </h1>
+                <a id="topMenuBtn" href="javascript:;" onclick="topMenuEvent()"><span class="skip">메뉴보기</span></a>
+                <ul id="topMenuWrap">
+                    <li><a class="topmenu01" href="main.html">자가진단</a></li>
+                    <li><a class="topmenu02" href="알림목록.html">알림조회</a></li>
+                    <li><a class="topmenu03" href="공지사항목록.html">공지사항</a></li>
+                    <li><a class="topmenu04" href="동선관리목록.html">동선관리</a></li>
+                    <li><a class="topmenu05" href="참여현황목록.html">오늘 우리반 참여현황</a></li>
+                    <li><a class="topmenu06" href="앱설정.html">앱설정</a></li>
+                    <li><a class="topmenu07" href="loginHome.html">로그아웃</a></li>
+                </ul>
+                <div id="topMenuShadow"></div>
+                <div class="title_bar">
+                    <h2><strong>코로나19 시도별 정보</strong></h2>
+                    <ul>
+                        <li><a href="main.html">처음으로</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <div id="covid19Area_section">
+            <form action="">
+                <div class="group1">
+                    <p>아래 시도를 클릭하시면 상세 현황을 확인할 수 있습니다.</p>
+                </div>
+                <div class="group2">
+                    <ul>
+                        <li><a href="https://www.seoul.go.kr/coronaV/coronaStatus.do" target="_blank"
+                                title="새창">서울특별시</a></li>
+                        <li><a href="http://www.busan.go.kr/covid19/Corona19.do" target="_blank" title="새창">부산광역시</a>
+                        </li>
+                        <li><a href="http://www.daegu.go.kr/intro.jsp" target="_blank" title="새창">대구광역시</a></li>
+                        <li><a href="https://www.incheon.go.kr/index" target="_blank" title="새창">인천광역시</a></li>
+                        <li><a href="https://www.gwangju.go.kr/" target="_blank" title="새창">광주광역시</a></li>
+                        <li><a href="https://www.daejeon.go.kr/corona19/index.do" target="_blank" title="새창">대전광역시</a>
+                        </li>
+                        <li><a href="http://www.ulsan.go.kr/corona.jsp" target="_blank" title="새창">울산광역시</a></li>
+                        <li><a href="https://www.sejong.go.kr/life/sub05_0704.do" target="_blank" title="새창">세종특별자치시</a>
+                        </li>
+                        <li><a href="https://www.gg.go.kr/bbs/boardView.do?bsIdx=464&amp;bIdx=2296956&amp;menuId=1535"
+                                target="_blank" title="새창">경기도</a></li>
+                        <li><a href="http://www.provin.gangwon.kr/" target="_blank" title="새창">강원도</a></li>
+                        <li><a href="http://www.chungbuk.go.kr/" target="_blank" title="새창">충청북도</a></li>
+                        <li><a href="http://www.chungnam.go.kr/coronaStatus.do" target="_blank" title="새창">충청남도</a></li>
+                        <li><a href="http://www.jeonbuk.go.kr/" target="_blank" title="새창">전라북도</a></li>
+                        <li><a href="https://www.jeonnam.go.kr/coronaMainPage.do" target="_blank" title="새창">전라남도</a>
+                        </li>
+                        <li><a href="http://gb.go.kr/corona_main.htm" target="_blank" title="새창">경상북도</a></li>
+                        <li><a href="http://www.gyeongnam.go.kr/corona.html" target="_blank" title="새창">경상남도</a></li>
+                        <li><a href="https://jeju.go.kr/covid19.jsp" target="_blank" title="새창">제주특별자치도</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
