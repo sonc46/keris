@@ -33,7 +33,7 @@
             display: table-cell;
             width: 25%;
             padding: .625em 0;
-            font-size: .75em;
+            font-size: .875em;
             font-weight: 600;
             color: #fff;
             background: #999;
@@ -64,14 +64,21 @@
             overflow: hidden;
         }
 
+        #medical_section .group3 .part1 .unit1 .searchSelect {
+            float: left;
+            width: 25%;
+            height: 2.5em;
+            border: 0;
+        }
+
         #medical_section .group3 .part1 .unit1 .searchArea {
             float: left;
             height: 2.5em;
-            width: -webkit-calc(100% - 3em);
-            width: expression(100% - 3em);
-            width: -moz-calc(100% - 3em);
-            width: -o-calc(100% - 3em);
-            width: calc(100% - 3em);
+            width: -webkit-calc(75% - 3em);
+            width: expression(75% - 3em);
+            width: -moz-calc(75% - 3em);
+            width: -o-calc(75% - 3em);
+            width: calc(75% - 3em);
             padding: 0 .5em;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -185,6 +192,12 @@
                 font-size: .875em;
             }
         }
+
+        @media screen and (max-width: 320px) {
+            #medical_section .group2 .part1 a {
+                font-size: .75em;
+            }
+        }
     </style>
 </head>
 
@@ -232,6 +245,26 @@
                 <div class="group3">
                     <div class="part1">
                         <div class="unit1">
+                            <select name="" id="" class="searchSelect" title="지역 선택">
+                                <option value="all">전체</option>
+                                <option value="area1">서울</option>
+                                <option value="area2">경기</option>
+                                <option value="area3">인천</option>
+                                <option value="area4">강원</option>
+                                <option value="area5">대전</option>
+                                <option value="area6">세종</option>
+                                <option value="area7">충북</option>
+                                <option value="area8">충남</option>
+                                <option value="area9">대구</option>
+                                <option value="area10">경북</option>
+                                <option value="area11">울산</option>
+                                <option value="area12">부산</option>
+                                <option value="area13">경남</option>
+                                <option value="area14">광주</option>
+                                <option value="area15">전남</option>
+                                <option value="area16">전북</option>
+                                <option value="area17">제주</option>
+                            </select>
                             <input type="text" class="searchArea" title="검색어 입력" placeholder="검색어를 입력하세요">
                             <button type="submit" class="sesarchBtn"><span class="skip">검색하기</span></button>
                         </div>
